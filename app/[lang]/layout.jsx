@@ -85,6 +85,7 @@ export default async function RootLayout({ children, params }) {
           copyPageButton={false}
           toc={{ title: t.toc, backToTop: t.backToTop }}
           themeSwitch={{ dark: t.themeDark, light: t.themeLight, system: t.themeSystem }}
+          nextThemes={{ defaultTheme: 'dark' }}
           lastUpdated={<LastUpdated locale={lang}>{t.lastUpdated}</LastUpdated>}
           sidebar={{ defaultMenuCollapseLevel: 1 }}
         >

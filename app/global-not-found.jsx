@@ -9,11 +9,11 @@ export default function GlobalNotFound() {
   return (
     <html lang="th" className={fontClasses} suppressHydrationWarning>
       <head>
-        {/* The docs keep their theme in localStorage `theme` (next-themes); follow it here too. */}
+        {/* The docs keep their theme in localStorage `theme` (next-themes) and default to dark. */}
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "try{var t=localStorage.getItem('theme');if(t==='dark'||((!t||t==='system')&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}",
+              "try{var t=localStorage.getItem('theme');if(!t||t==='dark'||(t==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}",
           }}
         />
       </head>
