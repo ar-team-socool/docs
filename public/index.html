@@ -4,29 +4,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
-    <title>คู่มือ AR Team · AR Team Docs</title>
+    <title>AR Team Docs</title>
     <!--
-      Sends a reader to their language. The order follows the download page's rule
-      (page-language.ts): a choice made on this site first (NEXT_LOCALE), then the first of Thai or
-      English in the browser's languages, then Thai. Paths are relative so the base path still holds.
+      Sends a reader to their language, in this order:
+        1. a choice made on this site (the NEXT_LOCALE cookie the language button writes);
+        2. Thai anywhere in the browser's languages, since many Thai players run an English-first browser;
+        3. a Thai clock (Asia/Bangkok), for a Thai player whose browser lists English alone;
+        4. English.
+      Paths are relative so the GitHub Pages base path still holds. chooseLang is pure so
+      scripts/choose-lang.test.mjs can drive it.
     -->
-    <script>
+    <script id="choose-lang">
+      function chooseLang(cookie, languages, timeZone) {
+        var stored = /(?:^|;\s*)NEXT_LOCALE=(th|en)(?:;|$)/.exec(cookie || '');
+        if (stored) return stored[1];
+        for (var i = 0; i < (languages || []).length; i++) {
+          if (String(languages[i]).toLowerCase().split(/[-;,\s]/)[0] === 'th') return 'th';
+        }
+        if (timeZone === 'Asia/Bangkok') return 'th';
+        return 'en';
+      }
       (function () {
         var lang = 'th';
         try {
-          var stored = document.cookie.match(/(?:^|;\s*)NEXT_LOCALE=(th|en)(?:;|$)/);
-          if (stored) {
-            lang = stored[1];
-          } else {
-            var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-            for (var i = 0; i < langs.length; i++) {
-              var primary = String(langs[i]).toLowerCase().split(/[-;,\s]/)[0];
-              if (primary === 'th' || primary === 'en') {
-                lang = primary;
-                break;
-              }
-            }
-          }
+          var languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+          lang = chooseLang(document.cookie, languages, Intl.DateTimeFormat().resolvedOptions().timeZone);
         } catch (e) {}
         location.replace(lang + location.search + location.hash);
       })();

@@ -31,6 +31,9 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - name: Test
+        run: pnpm test
+
       - id: pages
         uses: actions/configure-pages@v6
 

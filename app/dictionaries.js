@@ -4,8 +4,8 @@ export const LANGS = ['th', 'en'];
 /** Interface words per language. Page content lives in content/<lang>/. */
 export const DICT = {
   th: {
-    siteTitle: 'คู่มือ AR Team',
-    section: 'คู่มือ',
+    siteTitle: 'AR Team Docs',
+    section: 'Docs',
     description: 'คู่มือการใช้งานโปรแกรมของ AR Team สำหรับผู้เล่นทุกเซิร์ฟเวอร์',
     searchPlaceholder: 'ค้นหาในคู่มือ…',
     searchEmpty: 'ไม่พบหน้าที่ตรงกับคำค้น',
