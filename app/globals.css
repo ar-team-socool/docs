@@ -453,6 +453,8 @@ main pre {
   border: 1px solid var(--ar-gray-400);
   border-radius: 8px;
   background: var(--ar-bg-100);
+  scrollbar-width: thin;
+  scrollbar-color: var(--ar-gray-600) transparent;
 }
 
 /* Nextra shows the copy button only on hover, which a phone never does and a reader does not
@@ -463,6 +465,26 @@ main pre {
 
 .nextra-code pre > div:has(> button) button {
   background: var(--ar-bg-100);
+}
+
+/* ---- Scrollbars, as Vercel's docs (measured 2026-11-15) ----
+   The page keeps the browser's own bar, drawn dark by color-scheme, with its gutter reserved so a
+   short page does not sit wider than a long one. The left menu scrolls with no bar at all, "On
+   this page" uses the browser's own, and code blocks use the thin gray-600 one set on main pre. */
+html {
+  scrollbar-gutter: stable;
+}
+
+aside.nextra-sidebar .nextra-scrollbar {
+  scrollbar-width: none;
+}
+
+aside.nextra-sidebar .nextra-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+nav.nextra-toc .nextra-scrollbar {
+  scrollbar-width: auto;
 }
 
 main kbd {
