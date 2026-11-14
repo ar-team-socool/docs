@@ -31,13 +31,13 @@ import { Callout } from 'nextra/components'
 
 1. เปิด **Settings** ของ Windows ไปที่ **Time & language** → **Date & time**
 2. เปิด **Set time automatically** (ตั้งเวลาอัตโนมัติ)
-3. ถ้าเวลายังผิด ให้เลือก **Time zone** ตามประเทศที่อยู่ เช่น **(UTC+07:00) Bangkok, Hanoi, Jakarta** สำหรับประเทศไทย
+3. ถ้าเวลายังผิด ให้เลือก **Time zone** ตามประเทศที่อยู่ เช่น **(UTC+07:00) Bangkok, Hanoi, Jakarta** สำหรับประเทศไทย ถ้าเลือกไม่ได้ ให้ปิด **Set time zone automatically** ก่อน
 4. กลับไปที่ AR Launcher แล้วกด **ลองอีกครั้ง**
 
 ### ต้องอัปเดตแต่ยังไม่มีเวอร์ชันใหม่ [#startup-update]
 
-เวอร์ชันที่ติดตั้งอยู่ต้องอัปเดตก่อนใช้งาน แต่ AR Launcher ยังหาเวอร์ชันใหม่ให้ติดตั้งไม่ได้ กด **ลองอีกครั้ง** ในภายหลัง
-ถ้ายังขึ้นอยู่ ให้ดาวน์โหลดตัวติดตั้งล่าสุดจาก[หน้าติดตั้ง](/th/ar-launcher/install#download) แล้วติดตั้งทับ
+เวอร์ชันที่ติดตั้งอยู่เก่ากว่าเวอร์ชันที่ใช้งานได้ แต่ยังไม่มีเวอร์ชันใหม่ให้อัปเดต ปัญหานี้ไม่ได้อยู่ที่เครื่องของคุณ การติดตั้งใหม่จึงไม่ช่วย
+รอสักพักแล้วกด **ลองอีกครั้ง** ถ้ายังขึ้นอยู่ ให้ติดต่อทีมงาน
 
 ### ต้องติดตั้ง AR Launcher ใหม่ [#startup-reinstall]
 
@@ -48,6 +48,7 @@ import { Callout } from 'nextra/components'
 
 เปิดประวัติการป้องกันในโปรแกรมป้องกันไวรัส อนุญาตรายการล่าสุดที่ถูกบล็อก แล้วกด **ลองอีกครั้ง**
 ถ้าใช้ Windows Security ให้ไปที่ **Virus & threat protection** → **Protection history**
+ถ้าไม่มีรายการที่ถูกบล็อก ให้[ส่งไฟล์ log ให้ทีมงาน](/th/ar-launcher/send-log)
 
 ### Windows จับภาพหน้าจอไม่ได้ [#startup-capture-unsupported]
 
@@ -85,7 +86,8 @@ import { Callout } from 'nextra/components'
 cmd /c "reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f && reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v FilterAdministratorToken /t REG_DWORD /d 1 /f"
 ```
 
-ถ้าทำแล้วยังไม่หาย ให้สร้างบัญชีผู้ดูแลระบบใหม่ใน Windows แล้วใช้บัญชีนั้นแทน
+ถ้าทำแล้วยังไม่หาย ให้เข้าใช้งาน Windows ด้วยบัญชีผู้ดูแลระบบปกติ ไม่ใช่บัญชี Administrator ที่มากับ Windows
+ถ้าตอนติดตั้ง AR Launcher [เลือกให้ใช้ได้เฉพาะบัญชีเดิม](/th/ar-launcher/install#install-for-whom) ต้องติดตั้ง AR Launcher ใหม่ในบัญชีนั้นด้วย
 
 ### FiveM เปิดอยู่ตอนเปิด AR Launcher [#startup-fivem-running]
 

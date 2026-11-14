@@ -36,15 +36,15 @@ setting the clock by hand.
 1. Open Windows **Settings** and go to **Time & language** → **Date & time**.
 2. Turn on **Set time automatically**.
 3. If the time is still wrong, choose the **Time zone** for the country you are in, for example
-   **(UTC+07:00) Bangkok, Hanoi, Jakarta** for Thailand.
+   **(UTC+07:00) Bangkok, Hanoi, Jakarta** for Thailand. If you cannot choose one, turn off
+   **Set time zone automatically** first.
 4. Go back to AR Launcher and press **Try again**.
 
 ### An update is required, but no new version is available yet [#startup-update]
 
-The installed version must be updated before it can be used, but AR Launcher could not find a new version
-to install. Press **Try again** later.
-If it keeps happening, download the latest installer from the [install page](/en/ar-launcher/install#download)
-and install it over the old one.
+The installed version is older than the versions that may be used, and there is no newer version to update
+to yet. This is not a problem with your PC, so reinstalling does not help.
+Wait a while, then press **Try again**. If it keeps happening, contact the AR team.
 
 ### Reinstall AR Launcher [#startup-reinstall]
 
@@ -56,6 +56,7 @@ file from the official channels only.
 
 Open your antivirus protection history, allow the most recently blocked item, then press **Try again**.
 If you use Windows Security, go to **Virus & threat protection** → **Protection history**.
+If nothing there was blocked, [send your log file to the team](/en/ar-launcher/send-log).
 
 ### Windows cannot capture the screen [#startup-capture-unsupported]
 
@@ -98,7 +99,9 @@ The command turns UAC on for this PC and this account. If it could not be copied
 cmd /c "reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f && reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v FilterAdministratorToken /t REG_DWORD /d 1 /f"
 ```
 
-If it still does not work, create a new administrator account in Windows and use that one instead.
+If it still does not work, sign in to Windows with an ordinary administrator account rather than the
+built-in Administrator. If you installed AR Launcher
+[for yourself only](/en/ar-launcher/install#install-for-whom), install it again in that account too.
 
 ### FiveM is running when AR Launcher opens [#startup-fivem-running]
 
