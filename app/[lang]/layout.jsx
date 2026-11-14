@@ -8,6 +8,7 @@ import logoBlack from '../../assets/logo-black.png';
 import logoWhite from '../../assets/logo-white.png';
 import { DICT, LANGS } from '../dictionaries';
 import { fontClasses } from '../fonts';
+import { SITE_URL } from '../site';
 import 'nextra-theme-docs/style.css';
 import '../globals.css';
 
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }) {
   const { lang } = await params;
   const t = DICT[lang];
   return {
+    metadataBase: new URL(SITE_URL),
     title: { default: t.siteTitle, template: `%s – ${t.siteTitle}` },
     description: t.description,
   };

@@ -54,7 +54,24 @@ pnpm serve        # เปิด out/ แบบเดียวกับ GitHub P
 
 ## เผยแพร่
 
-push เข้า `main` แล้ว `.github/workflows/deploy.yml` จะ build และเผยแพร่ให้เอง
+เว็บอยู่ที่ **https://ar-docs.wip-town.com** (ตั้งไว้ใน `app/site.js` ใช้ทำลิงก์ canonical, ลิงก์คู่ภาษา และ `sitemap.xml`)
+
+push เข้า `main` แล้ว `.github/workflows/deploy.yml` จะทดสอบ build และเผยแพร่ให้เอง
+
+ตั้งค่าครั้งแรก (ทำครั้งเดียว)
+
+1. ที่ Cloudflare ของ `wip-town.com` เพิ่ม DNS แบบ `CNAME` ชื่อ `ar-docs` ชี้ไปที่ `ar-team-socool.github.io`
+   ตั้งเป็น **DNS only (เมฆสีเทา)** เพื่อให้ GitHub ออกใบรับรอง HTTPS ได้
+2. ใน repo ไปที่ Settings → Pages
+   - Source: **GitHub Actions**
+   - Custom domain: `ar-docs.wip-town.com`
+   - เมื่อ GitHub ตรวจ DNS ผ่านแล้ว ให้ติ๊ก **Enforce HTTPS**
+3. (แนะนำ) ยืนยันโดเมน `wip-town.com` ในการตั้งค่า Pages ของ org เพื่อกันคนอื่นเอา subdomain ไปใช้
+
+การ deploy ผ่าน Actions ไม่ใช้ไฟล์ `CNAME` จึงไม่มีไฟล์นี้ใน repo
+
+ถ้าต้องการลองแบบมี base path (เช่น `/docs`) ให้ build ด้วย `PAGES_BASE_PATH=/docs`
+แล้วเปิดด้วย `node scripts/serve.mjs 3212 /docs`
 
 ## ข้อควรรู้
 

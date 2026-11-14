@@ -34,13 +34,13 @@ jobs:
       - name: Test
         run: pnpm test
 
-      - id: pages
-        uses: actions/configure-pages@v6
+      - uses: actions/configure-pages@v6
 
+      # Built for the site root: the docs live at https://ar-docs.wip-town.com (app/site.js), and the
+      # repository's github.io address redirects there once the custom domain is set in its Pages settings.
       - name: Build
         run: pnpm build
         env:
-          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
           NEXT_TELEMETRY_DISABLED: '1'
 
       - name: Check the search index was written
