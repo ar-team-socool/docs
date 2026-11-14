@@ -10,8 +10,8 @@
 <h1 align="center">AR Team Docs</h1>
 
 <p align="center">
-  คู่มือทางการของ AR Team สำหรับผู้เล่นทุกเซิร์ฟเวอร์<br>
-  Official AR Team guides for players on every server
+  เอกสารและคู่มือทางการของโปรเจกต์ AR Team<br>
+  Official documentation for AR Team's projects
 </p>
 
 <p align="center">
@@ -30,9 +30,15 @@
 
 ## ภาษาไทย
 
-AR Team Docs คือคู่มือการใช้งานโปรแกรมของ AR Team อ่านได้ที่ **[ar-docs.wip-town.com](https://ar-docs.wip-town.com)** มีทั้งภาษาไทยและภาษาอังกฤษ ค้นหาได้ทั้งสองภาษา และเปิดบนมือถือได้
+AR Team Docs รวมเอกสารและคู่มือการใช้งานโปรเจกต์ของ AR Team ไว้ในที่เดียว อ่านได้ที่ **[ar-docs.wip-town.com](https://ar-docs.wip-town.com)** มีทั้งภาษาไทยและภาษาอังกฤษ ค้นหาได้ทั้งสองภาษา และเปิดบนมือถือได้
 
-### AR Launcher
+### โปรเจกต์
+
+โปรเจกต์อื่นของทีมจะทยอยเพิ่มเข้ามา
+
+#### AR Launcher
+
+โปรแกรมสำหรับเข้าเล่นเซิร์ฟเวอร์ FiveM ที่ใช้ระบบของ AR Team
 
 | หัวข้อ | เนื้อหา |
 | --- | --- |
@@ -46,15 +52,21 @@ AR Team Docs คือคู่มือการใช้งานโปรแ�
 
 ### ต้องการความช่วยเหลือ
 
-กรุณาติดต่อทีมงานของเซิร์ฟเวอร์ที่คุณเล่นผ่าน Discord ของเซิร์ฟเวอร์นั้น repo นี้ใช้เก็บเนื้อหาของคู่มือเท่านั้น ไม่ได้เป็นช่องทางรับแจ้งปัญหา
+กรุณาติดต่อทีมงานผ่านช่องทางที่คู่มือของแต่ละโปรเจกต์บอกไว้ เช่น ผู้เล่น AR Launcher ติดต่อทีมงานของเซิร์ฟเวอร์ที่เล่นผ่าน Discord ของเซิร์ฟเวอร์นั้น repo นี้ใช้เก็บเนื้อหาของคู่มือเท่านั้น ไม่ได้เป็นช่องทางรับแจ้งปัญหา
 
 ---
 
 ## English
 
-AR Team Docs is the official guide to AR Team's programs. Read it at **[ar-docs.wip-town.com](https://ar-docs.wip-town.com/en)**, in Thai or English, with search in both languages, on desktop or mobile.
+AR Team Docs brings the documentation and guides for AR Team's projects together in one place. Read it at **[ar-docs.wip-town.com](https://ar-docs.wip-town.com/en)**, in Thai or English, with search in both languages, on desktop or mobile.
 
-### AR Launcher
+### Projects
+
+More of the team's projects will be added over time.
+
+#### AR Launcher
+
+The program for joining FiveM servers that run AR Team's system.
 
 | Topic | What it covers |
 | --- | --- |
@@ -68,7 +80,7 @@ Download AR Launcher from [ar-launcher.wip-town.com](https://ar-launcher.wip-tow
 
 ### Need help?
 
-Please contact the team of the server you play on, through that server's Discord. This repository holds the content of the docs only and is not a support channel.
+Please contact the team through the channel each project's guide gives. For example, AR Launcher players contact the team of the server they play on, through that server's Discord. This repository holds the content of the docs only and is not a support channel.
 
 ---
 

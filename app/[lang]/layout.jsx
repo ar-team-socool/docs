@@ -57,14 +57,7 @@ export default async function RootLayout({ children, params }) {
         </span>
       }
     >
-      <NavActions
-        lang={lang}
-        other={other}
-        label={t.switchTo}
-        shortLabel={t.switchToShort}
-        download={t.download}
-        downloadHref={t.downloadHref}
-      />
+      <NavActions lang={lang} other={other} label={t.switchTo} shortLabel={t.switchToShort} />
       <SidebarSearch>{search}</SidebarSearch>
     </Navbar>
   );

@@ -6,10 +6,11 @@ import { usePathname, useRouter } from 'next/navigation';
 const ONE_YEAR_S = 31_536_000;
 
 /**
- * The right side of the top bar: switch to the other language on the same page, and the download
- * button. The choice is kept in `NEXT_LOCALE`, which `public/index.html` reads on the next visit.
+ * The right side of the top bar: switch to the other language on the same page. The bar is shared by
+ * every project, so nothing project-specific goes here. The choice is kept in `NEXT_LOCALE`, which
+ * `public/index.html` reads on the next visit.
  */
-export function NavActions({ lang, other, label, shortLabel, download, downloadHref }) {
+export function NavActions({ lang, other, label, shortLabel }) {
   const pathname = usePathname();
   const router = useRouter();
   const target = pathname.replace(new RegExp(`^/${lang}(?=/|$)`), `/${other}`);
@@ -36,9 +37,6 @@ export function NavActions({ lang, other, label, shortLabel, download, downloadH
         <span className="ar-long">{label}</span>
         <span className="ar-short">{shortLabel}</span>
       </Link>
-      <a href={downloadHref} className="ar-btn ar-btn-primary">
-        {download}
-      </a>
     </div>
   );
 }

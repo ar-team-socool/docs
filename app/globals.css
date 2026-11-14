@@ -124,8 +124,16 @@ samp {
   color: var(--ar-gray-1000);
 }
 
-/* Search lives at the top of the sidebar on desktop (components/sidebar-search.jsx). */
-.nextra-navbar .nextra-search {
+/*
+ * Search lives at the top of an open sidebar on desktop (components/sidebar-search.jsx). A page with no
+ * sidebar (the home page) or one the reader has collapsed keeps it in the top bar instead. The theme
+ * marks a hidden sidebar `x:hidden`, a shown one `x:sticky`, and its width `x:w-64` or `x:w-20`.
+ */
+html:has(aside.nextra-sidebar[class~='x:sticky'][class~='x:w-64']) .nextra-navbar .nextra-search {
+  display: none;
+}
+
+aside.nextra-sidebar[class~='x:w-20'] .ar-sidebar-search {
   display: none;
 }
 
@@ -161,16 +169,6 @@ samp {
 
 .ar-btn:hover {
   background: var(--ar-gray-100);
-}
-
-.ar-btn-primary {
-  background: var(--ar-gray-1000);
-  box-shadow: none;
-  color: var(--ar-bg-100);
-}
-
-.ar-btn-primary:hover {
-  background: var(--ar-gray-900);
 }
 
 .ar-short {
