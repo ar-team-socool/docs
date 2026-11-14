@@ -370,6 +370,11 @@ nav.nextra-toc li:has(> a[class*='text-primary'])::after {
   background: var(--ar-gray-1000);
 }
 
+/* The links under the list sit on no rule of their own, so the track is the only line in the column. */
+nav.nextra-toc .nextra-border {
+  border-top-width: 0;
+}
+
 /* ---- Sharing a page: the button under the table of contents, and the note a # click leaves ---- */
 
 .ar-copy-link {
