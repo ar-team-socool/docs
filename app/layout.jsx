@@ -41,7 +41,7 @@ export default async function RootLayout({ children }) {
     >
       <Head
         color={{ hue: 0, saturation: 0, lightness: { light: 9, dark: 98 } }}
-        backgroundColor={{ light: 'rgb(255,255,255)', dark: 'rgb(10,10,10)' }}
+        backgroundColor={{ light: 'rgb(250,250,250)', dark: 'rgb(0,0,0)' }}
       />
       <body>
         <Layout

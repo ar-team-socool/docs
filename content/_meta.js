@@ -2,7 +2,7 @@ export default {
   index: {
     type: 'page',
     display: 'hidden',
-    theme: { layout: 'full', toc: false, sidebar: false, timestamp: false },
+    theme: { toc: false, sidebar: false, timestamp: false, breadcrumb: false, pagination: false },
   },
   'ar-launcher': {
     type: 'page',

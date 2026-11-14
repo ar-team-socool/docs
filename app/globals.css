@@ -1,3 +1,59 @@
+/*
+ * Vercel-docs look over the Nextra theme. Values are read off vercel.com/docs (2026-11-15) in both
+ * themes: Geist's gray scale, its type sizes and its 6px radius. The theme's own CSS sits in cascade
+ * layers, so these unlayered rules win without !important.
+ */
+
+:root {
+  --ar-bg: #fafafa;
+  --ar-bg-100: #ffffff;
+  --ar-gray-100: hsl(0 0% 95%);
+  --ar-gray-200: hsl(0 0% 92%);
+  --ar-gray-400: hsl(0 0% 92%);
+  --ar-gray-500: hsl(0 0% 79%);
+  --ar-gray-700: hsl(0 0% 56%);
+  --ar-gray-800: hsl(0 0% 49%);
+  --ar-gray-900: hsl(0 0% 30%);
+  --ar-gray-1000: hsl(0 0% 9%);
+  --ar-alpha-100: #0000000d;
+  --ar-alpha-400: #00000014;
+  --ar-link-line: rgba(0, 0, 0, 0.34);
+  --ar-amber-100: hsl(39 100% 95%);
+  --ar-amber-400: hsl(42 100% 78%);
+  --ar-amber-900: hsl(30 100% 32%);
+  --ar-red-100: hsl(0 100% 97%);
+  --ar-red-400: hsl(0 90% 92%);
+  --ar-red-900: hsl(358 66% 48%);
+  --ar-blue-100: hsl(212 100% 97%);
+  --ar-blue-400: hsl(209 100% 90%);
+  --ar-blue-900: hsl(211 100% 42%);
+}
+
+html.dark {
+  --ar-bg: #000000;
+  --ar-bg-100: #0a0a0a;
+  --ar-gray-100: hsl(0 0% 10%);
+  --ar-gray-200: hsl(0 0% 12%);
+  --ar-gray-400: hsl(0 0% 18%);
+  --ar-gray-500: hsl(0 0% 27%);
+  --ar-gray-700: hsl(0 0% 56%);
+  --ar-gray-800: hsl(0 0% 49%);
+  --ar-gray-900: hsl(0 0% 63%);
+  --ar-gray-1000: hsl(0 0% 93%);
+  --ar-alpha-100: #ffffff0f;
+  --ar-alpha-400: #ffffff24;
+  --ar-link-line: rgba(255, 255, 255, 0.51);
+  --ar-amber-100: hsl(35 100% 8%);
+  --ar-amber-400: hsl(35 100% 17%);
+  --ar-amber-900: hsl(39 90% 50%);
+  --ar-red-100: hsl(357 37% 12%);
+  --ar-red-400: hsl(357 55% 26%);
+  --ar-red-900: hsl(358 100% 69%);
+  --ar-blue-100: hsl(216 50% 12%);
+  --ar-blue-400: hsl(212 78% 23%);
+  --ar-blue-900: hsl(210 100% 66%);
+}
+
 /* Geist draws Latin and has no Thai glyphs, so Thai falls through to Noto Sans Thai. */
 html {
   font-family: var(--font-geist), var(--font-thai), ui-sans-serif, system-ui, sans-serif;
@@ -10,15 +66,24 @@ samp {
   font-family: var(--font-geist-mono), var(--font-thai), ui-monospace, monospace;
 }
 
-/* A heading reached by a shared link lands a little below the sticky navbar, not against it. */
-article :is(h2, h3)[id] {
-  scroll-margin-top: 16px;
+/* ---- Borders: one hairline colour everywhere ---- */
+
+.nextra-border {
+  border-color: var(--ar-gray-400);
+}
+
+/* ---- Navbar ---- */
+
+.nextra-navbar-blur {
+  background: var(--ar-bg);
+  backdrop-filter: none;
 }
 
 .ar-brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -35,6 +100,320 @@ html.dark .ar-logo-dark {
   display: block;
 }
 
+.nextra-search input {
+  height: 36px;
+  border: 1px solid var(--ar-alpha-400);
+  border-radius: 6px;
+  background: var(--ar-bg-100);
+  color: var(--ar-gray-1000);
+  font-size: 14px;
+}
+
+.nextra-search input::placeholder {
+  color: var(--ar-gray-900);
+}
+
+.nextra-search kbd {
+  border-color: var(--ar-alpha-400);
+  border-radius: 4px;
+  background: var(--ar-gray-100);
+  color: var(--ar-gray-900);
+}
+
+.nextra-search-results {
+  border-color: var(--ar-gray-400);
+  border-radius: 12px;
+  background: var(--ar-bg-100);
+  backdrop-filter: none;
+  box-shadow:
+    0 0 0 1px var(--ar-alpha-100),
+    0 8px 24px -8px rgba(0, 0, 0, 0.16);
+}
+
+.nextra-search-results [role='option'] {
+  color: var(--ar-gray-1000);
+}
+
+.nextra-search-results [role='option'][data-focus] {
+  background: var(--ar-gray-100);
+}
+
+/* No padding: Pagefind marks parts of one Thai word, and padding would open gaps inside it. */
+.nextra-search-results mark {
+  border-radius: 2px;
+  background: var(--ar-gray-200);
+  color: var(--ar-gray-1000);
+  font-weight: 600;
+}
+
+/* ---- Sidebar (desktop and the mobile menu share the link classes) ---- */
+
+:is(.nextra-sidebar, .nextra-mobile-nav) a,
+:is(.nextra-sidebar, .nextra-mobile-nav) button:not([title]) {
+  min-height: 36px;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--ar-gray-1000);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+:is(.nextra-sidebar, .nextra-mobile-nav) a:hover {
+  background: var(--ar-alpha-100);
+  color: var(--ar-gray-1000);
+}
+
+/* The current page's link carries the bare token; every other link has it only under hover:. */
+:is(.nextra-sidebar, .nextra-mobile-nav) a[class~='x:bg-primary-100'] {
+  background: var(--ar-gray-200);
+  color: var(--ar-gray-1000);
+  font-weight: 500;
+}
+
+/* A section that holds the current page reads as a heading, so only the page itself is filled. */
+:is(.nextra-sidebar, .nextra-mobile-nav) button[class~='x:bg-primary-100'] {
+  background: transparent;
+  color: var(--ar-gray-1000);
+  font-weight: 600;
+}
+
+.nextra-sidebar-footer {
+  background: var(--ar-bg);
+}
+
+/* ---- Table of contents ---- */
+
+nav.nextra-toc p {
+  padding-bottom: 8px;
+  color: var(--ar-gray-800);
+  font-weight: 400;
+}
+
+nav.nextra-toc a {
+  color: var(--ar-gray-900);
+  font-weight: 400;
+  line-height: 20px;
+}
+
+nav.nextra-toc a:hover {
+  color: var(--ar-gray-1000);
+}
+
+nav.nextra-toc a[class*='text-primary'] {
+  color: var(--ar-gray-1000);
+  font-weight: 500;
+}
+
+/* ---- Article ---- */
+
+article {
+  color: var(--ar-gray-1000);
+}
+
+.nextra-breadcrumb {
+  color: var(--ar-gray-900);
+}
+
+.nextra-breadcrumb a:hover {
+  color: var(--ar-gray-1000);
+}
+
+/* Thai stacks marks above and below the line, so headings get more leading than Vercel's Latin. */
+main h1 {
+  margin-top: 16px;
+  color: var(--ar-gray-1000);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+main h2 {
+  margin-top: 48px;
+  padding-bottom: 0;
+  border-bottom: 0;
+  color: var(--ar-gray-1000);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+main h3 {
+  margin-top: 32px;
+  color: var(--ar-gray-1000);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+main :is(h2, h3)[id] {
+  scroll-margin-top: 16px;
+}
+
+main p,
+main li {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+main :is(p, li) a:not(.nextra-card) {
+  color: var(--ar-gray-1000);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--ar-link-line);
+  text-underline-offset: 3px;
+}
+
+main :is(p, li) a:not(.nextra-card):hover {
+  text-decoration-color: currentColor;
+}
+
+main strong {
+  color: var(--ar-gray-1000);
+  font-weight: 600;
+}
+
+main :not(pre) > code {
+  padding: 1px 5px;
+  border: 1px solid var(--ar-alpha-400);
+  border-radius: 4px;
+  background: var(--ar-gray-100);
+  color: var(--ar-gray-1000);
+  font-size: 0.9em;
+}
+
+main pre {
+  border: 1px solid var(--ar-gray-400);
+  border-radius: 8px;
+  background: var(--ar-bg-100);
+}
+
+main kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--ar-alpha-400);
+  border-radius: 4px;
+  background: var(--ar-gray-100);
+  font-size: 0.85em;
+}
+
+/* ---- Callouts, as Geist's Note ---- */
+
+.nextra-callout {
+  align-items: flex-start;
+  padding: 8px 12px;
+  border: 1px solid var(--ar-gray-400);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ar-gray-900);
+}
+
+.nextra-callout > div:first-child {
+  padding: 0 10px 0 0;
+  font-size: 14px;
+}
+
+.nextra-callout p {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.nextra-callout :is(strong, a) {
+  color: inherit;
+}
+
+.nextra-callout[class*='bg-yellow'] {
+  border-color: var(--ar-amber-400);
+  background: var(--ar-amber-100);
+  color: var(--ar-amber-900);
+}
+
+.nextra-callout[class*='bg-red'] {
+  border-color: var(--ar-red-400);
+  background: var(--ar-red-100);
+  color: var(--ar-red-900);
+}
+
+.nextra-callout[class*='bg-blue'] {
+  border-color: var(--ar-blue-400);
+  background: var(--ar-blue-100);
+  color: var(--ar-blue-900);
+}
+
+/* ---- Steps ---- */
+
+.nextra-steps {
+  border-color: var(--ar-gray-400);
+}
+
+.nextra-steps :is(h2, h3)::before {
+  border-color: var(--ar-bg);
+  background: var(--ar-gray-100);
+  box-shadow: inset 0 0 0 1px var(--ar-alpha-400);
+  color: var(--ar-gray-1000);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nextra-steps :is(h2, h3) {
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Cards ---- */
+
+.nextra-card {
+  border: 1px solid var(--ar-gray-400);
+  border-radius: 8px;
+  background: var(--ar-bg-100);
+  box-shadow: none;
+}
+
+.nextra-card:hover {
+  border-color: var(--ar-gray-500);
+  background: var(--ar-bg-100);
+  box-shadow: none;
+}
+
+/* The theme draws a card's text above its title; Vercel's cards put the title first. */
+.nextra-card {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+
+.nextra-card > span {
+  color: var(--ar-gray-1000);
+}
+
+.nextra-card:has(> p) > span {
+  padding-bottom: 4px;
+}
+
+.nextra-card > p {
+  margin: 0;
+  padding: 0 16px 16px;
+  color: var(--ar-gray-900);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* ---- Footer: plain page background under a hairline, not a grey band ---- */
+
+footer {
+  color: var(--ar-gray-900);
+  font-size: 14px;
+}
+
+div:has(> footer) {
+  background: var(--ar-bg);
+}
+
+/* ---- 404 ---- */
+
 .ar-not-found {
   display: flex;
   flex-direction: column;
@@ -45,11 +424,27 @@ html.dark .ar-logo-dark {
 }
 
 .ar-not-found h1 {
-  font-size: 28px;
-  font-weight: 650;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.ar-not-found p {
+  color: var(--ar-gray-900);
 }
 
 .ar-not-found a {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--ar-gray-1000);
+  color: var(--ar-bg-100);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  main h1 {
+    font-size: 32px;
+  }
 }
