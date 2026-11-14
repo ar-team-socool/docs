@@ -1,0 +1,34 @@
+---
+title: ส่งไฟล์ log ให้ทีมงาน
+description: วิธีหาไฟล์ launcher.log ของ AR Launcher เพื่อส่งให้ทีมงานช่วยตรวจปัญหา
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# ส่งไฟล์ log ให้ทีมงาน
+
+ไฟล์ log บันทึกสิ่งที่ AR Launcher ทำบนเครื่องของคุณ ทีมงานใช้ไฟล์นี้หาสาเหตุของปัญหา
+
+<Steps>
+
+### เปิดโฟลเดอร์ log [#open-folder]
+
+กดปุ่ม <kbd>Windows</kbd> + <kbd>R</kbd> วางข้อความนี้แล้วกด <kbd>Enter</kbd>
+
+```text
+%APPDATA%\AR Launcher\logs
+```
+
+### หาไฟล์ [#find-files]
+
+ในโฟลเดอร์จะมีไฟล์ **launcher.log** และอาจมี **launcher.old.log** ด้วย
+
+### ส่งให้ทีมงาน [#send]
+
+ส่งทั้งสองไฟล์ให้ทีมงานของเซิร์ฟเวอร์ที่คุณเล่น พร้อมบอกว่าเกิดอะไรขึ้นและประมาณกี่โมง
+
+</Steps>
+
+<Callout type="warning">
+  ส่งไฟล์ให้ทีมงานโดยตรง อย่าโพสต์ในห้องแชตสาธารณะ
+</Callout>

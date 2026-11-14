@@ -1,0 +1,55 @@
+/* Geist draws Latin and has no Thai glyphs, so Thai falls through to Noto Sans Thai. */
+html {
+  font-family: var(--font-geist), var(--font-thai), ui-sans-serif, system-ui, sans-serif;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-geist-mono), var(--font-thai), ui-monospace, monospace;
+}
+
+/* A heading reached by a shared link lands a little below the sticky navbar, not against it. */
+article :is(h2, h3)[id] {
+  scroll-margin-top: 16px;
+}
+
+.ar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.ar-logo-dark {
+  display: none;
+}
+
+html.dark .ar-logo-light {
+  display: none;
+}
+
+html.dark .ar-logo-dark {
+  display: block;
+}
+
+.ar-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 96px 16px;
+  text-align: center;
+}
+
+.ar-not-found h1 {
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.ar-not-found a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

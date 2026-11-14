@@ -1,0 +1,57 @@
+---
+title: ดาวน์โหลดและติดตั้ง
+description: วิธีดาวน์โหลดและติดตั้ง AR Launcher และหน้าต่างที่อาจเจอระหว่างติดตั้ง
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# ดาวน์โหลดและติดตั้ง
+
+<Steps>
+
+### ดาวน์โหลดตัวติดตั้ง [#download]
+
+เปิดหน้า [ar-launcher.wip-town.com](https://ar-launcher.wip-town.com/) แล้วกด **ดาวน์โหลด**
+
+### เปิดไฟล์ที่ดาวน์โหลดมา [#run-installer]
+
+ระหว่างติดตั้งอาจเจอหน้าต่างใน[หัวข้อถัดไป](#installer-prompts) ทั้งหมดเป็นเรื่องปกติ
+
+### เข้าสู่ระบบด้วย Steam [#sign-in]
+
+เปิด AR Launcher แล้วกด **เข้าสู่ระบบด้วย Steam** ลันเชอร์จะเปิดหน้าเข้าสู่ระบบของ Steam ในเบราว์เซอร์
+เข้าสู่ระบบให้เสร็จแล้วกลับมาที่ลันเชอร์
+
+ถ้าไม่มีเบราว์เซอร์เปิดขึ้น ให้กด **คัดลอกลิงก์** แล้วนำไปวางในช่องที่อยู่ของเบราว์เซอร์เอง
+
+### ยอมรับข้อตกลง [#accept-terms]
+
+อ่าน **ข้อตกลงและเงื่อนไข** ให้ครบ แล้วกด **ยอมรับข้อตกลง**
+อ่าน[นโยบายความเป็นส่วนตัว](https://ar-launcher.wip-town.com/privacy)ได้จากลิงก์ในหน้าเดียวกัน
+
+</Steps>
+
+<Callout type="warning">
+  ใช้บัญชี Steam เดียวกับที่ผูกไว้ใน FiveM ถ้าเป็นคนละบัญชี เซิร์ฟเวอร์จะปฏิเสธการเชื่อมต่อ ดูวิธีแก้ที่
+  [บัญชี Steam ใน FiveM ไม่ตรงกับ AR Launcher](/ar-launcher/troubleshooting#steam-mismatch)
+</Callout>
+
+## หน้าต่างที่อาจเจอระหว่างติดตั้ง [#installer-prompts]
+
+### หน้าจอสีน้ำเงิน “Windows protected your PC” [#smartscreen]
+
+กด **More info** แล้วกด **Run anyway**
+
+### ตัวติดตั้งถามว่าจะติดตั้งให้ใคร [#install-for-whom]
+
+ปล่อยไว้ที่ **Only for me** ตามที่ตั้งไว้ให้ อีกตัวเลือกต้องใช้สิทธิ์ผู้ดูแลระบบ
+
+### หน้าต่างสีเหลือง Publisher: Unknown [#publisher-unknown]
+
+ขึ้นทุกครั้งที่เปิดลันเชอร์ ให้กด **ใช่** (Yes) ดูรายละเอียดที่
+[เข้าเล่นเซิร์ฟเวอร์](/ar-launcher/play#open-launcher)
+
+### แอนตี้ไวรัสบล็อกไฟล์ [#antivirus]
+
+เปิดประวัติการป้องกันของแอนตี้ไวรัส ถ้าใช้ Windows Security ให้ไปที่
+**Virus & threat protection** → **Protection history** กดอนุญาตรายการล่าสุด แล้วลองใหม่
