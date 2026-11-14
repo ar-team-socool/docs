@@ -1,6 +1,6 @@
 ---
 title: ดาวน์โหลดและติดตั้ง
-description: วิธีดาวน์โหลดและติดตั้ง AR Launcher และหน้าต่างที่อาจเจอระหว่างติดตั้ง
+description: วิธีดาวน์โหลดและติดตั้ง AR Launcher หน้าต่างที่อาจเจอระหว่างติดตั้ง และการถอนการติดตั้ง
 ---
 
 import { Callout, Steps } from 'nextra/components'
@@ -12,6 +12,7 @@ import { Callout, Steps } from 'nextra/components'
 ### ดาวน์โหลดตัวติดตั้ง [#download]
 
 เปิดหน้า [ar-launcher.wip-town.com](https://ar-launcher.wip-town.com/?lang=th) แล้วกด **ดาวน์โหลด**
+ดาวน์โหลดจากหน้านี้หรือจาก[หน้า GitHub ของ AR Launcher](https://github.com/ar-team-socool/fivem-launcher-releases) เท่านั้น ทั้งสองที่ให้ไฟล์เดียวกัน ไฟล์จากที่อื่นไม่ใช่ของเรา
 
 ### เปิดไฟล์ที่ดาวน์โหลดมา [#run-installer]
 
@@ -38,9 +39,14 @@ import { Callout, Steps } from 'nextra/components'
 
 ## หน้าต่างที่อาจเจอระหว่างติดตั้ง [#installer-prompts]
 
+### หน้าต่าง “Open File - Security Warning” [#security-warning]
+
+กด **Run** หน้าต่างนี้ขึ้นกับทุกโปรแกรมที่ดาวน์โหลดจากอินเทอร์เน็ต
+
 ### หน้าจอสีน้ำเงิน “Windows protected your PC” [#smartscreen]
 
 กด **More info** แล้วกด **Run anyway**
+ทำแบบนี้เฉพาะไฟล์ที่ดาวน์โหลดจาก[ที่ที่บอกไว้ด้านบน](#download)เท่านั้น ถ้าได้ไฟล์มาจากที่อื่น ให้ลบทิ้งแล้วดาวน์โหลดใหม่
 
 ### ตัวติดตั้งถามว่าจะติดตั้งให้ใคร [#install-for-whom]
 
@@ -55,3 +61,13 @@ import { Callout, Steps } from 'nextra/components'
 
 เปิดประวัติการป้องกันของแอนตี้ไวรัส ถ้าใช้ Windows Security ให้ไปที่
 **Virus & threat protection** → **Protection history** กดอนุญาตรายการล่าสุด แล้วลองใหม่
+
+### เปิดไฟล์แล้วไม่มีอะไรขึ้นมา [#nothing-opens]
+
+ไฟล์ไม่ได้เสีย ถ้าไฟล์ยังดาวน์โหลดไม่เสร็จ ให้รอจนเบราว์เซอร์บอกว่าเสร็จแล้วค่อยเปิดอีกครั้ง
+ถ้าดาวน์โหลดเสร็จแล้ว หน้าต่างเตือนอาจไปอยู่หลังหน้าต่างอื่น ให้ดูที่แถบงานก่อนเปิดไฟล์ซ้ำ
+
+## ถอนการติดตั้ง [#uninstall]
+
+ไปที่ **Settings** → **Apps** → **Installed apps** แล้วถอนการติดตั้ง **AR Launcher**
+ใน Windows 10 เมนูนี้ชื่อ **Apps & features**
