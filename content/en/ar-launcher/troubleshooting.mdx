@@ -1,0 +1,100 @@
+---
+title: Troubleshooting
+description: What each warning in AR Launcher means, and how to fix it
+---
+
+import { Callout } from 'nextra/components'
+
+# Troubleshooting
+
+The sections on this page are named after the windows AR Launcher shows. Find the one that matches what you
+see. If it still does not work after following the steps, [send your log file to the team](/en/ar-launcher/send-log).
+
+## The anti-cheat is not running [#anticheat-not-running]
+
+This appears when you press Connect on a server that only admits PCs where the anti-cheat is running.
+The message in the window says why. Find the section below that matches it.
+
+### Antivirus software is blocking it [#anticheat-blocked-by-antivirus]
+
+Open your antivirus protection history, allow the most recently blocked item, then press **Try again**.
+In Windows Security, go to **Virus & threat protection** → **Protection history**.
+
+### A file the anti-cheat needs is missing [#anticheat-files-missing]
+
+It may have been removed after installation. Reinstall AR Launcher.
+
+### AR Launcher is asking Windows for permission [#anticheat-waiting-for-windows]
+
+Choose **Yes** when Windows asks, then press **Try again**.
+If you cannot see the Windows prompt, look for the flashing icon on the taskbar.
+
+### Your Windows account is not an administrator [#anticheat-not-admin]
+
+Enter the password of an administrator account on this PC when Windows asks, then press **Try again**.
+If you do not know the password, sign in to Windows with an administrator account, or ask the owner of this PC.
+
+### This PC does not let your account ask for permission [#anticheat-elevation-denied]
+
+Sign in to Windows with an administrator account on this PC, or ask the owner of this PC.
+
+## The connection to the server is blocked [#connection-blocked]
+
+A program on your PC or network is blocking AR Launcher's connection.
+If you use a VPN or an internet booster, turn it off or set it to exclude AR Launcher, then press **Try again**.
+
+## FiveM is using a different Steam account [#steam-mismatch]
+
+FiveM is linked to a different Steam account than the one signed in to AR Launcher, so the server refused
+the connection. There are two ways to fix it:
+
+- Link the same Steam account as AR Launcher in the FiveM settings, then press **Try again**.
+  The launcher restarts FiveM for you.
+- Or sign out, and sign in to AR Launcher with the account FiveM uses.
+
+## Link your Steam account to FiveM [#steam-link]
+
+This server requires a Steam account linked to FiveM, and FiveM has to restart after linking, so the
+launcher closed FiveM. Press **Try again**. If FiveM asks you to link Steam, use the same account you signed
+in to AR Launcher with.
+
+## Could not join this server yet [#cannot-join]
+
+The message in the window says why. Find the section below that matches it.
+
+### AR Launcher could not find FiveM [#fivem-not-found]
+
+Open FiveM yourself once, wait for its main screen, close it, then press **Try again**.
+
+### The game was not started in pure mode [#pure-mode]
+
+Press **Try again** so the launcher starts the game again. Do not start FiveM yourself.
+If the message says it could not check, and it happens again, restart your PC and try again.
+
+### FiveM is not on the update channel the server requires [#update-channel]
+
+Press **Try again** and let FiveM finish updating. Do not start FiveM yourself.
+
+### FiveM updated itself and closed [#fivem-updated]
+
+Close FiveM's error window, then press **Try again**.
+
+### FiveM stopped while joining [#fivem-stopped]
+
+This is usually a FiveM crash, so the launcher closed the game window it left behind. Press **Try again**.
+
+## FiveM is open [#fivem-open]
+
+See [If FiveM is already open](/en/ar-launcher/play#fivem-already-open).
+
+## Blocked [#blocked]
+
+This account has been blocked from using AR Launcher. If you believe this is a mistake, contact the server
+administrators.
+
+## Kicked out of the game while playing [#kicked]
+
+<Callout type="info">
+  If the launcher is closed, crashes or loses its connection, the server kicks you out of the game. Keep the
+  launcher open the whole time you play.
+</Callout>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>คู่มือ AR Team · AR Team Docs</title>
+    <!--
+      Sends a reader to their language. The order follows the download page's rule
+      (page-language.ts): a choice made on this site first (NEXT_LOCALE), then the first of Thai or
+      English in the browser's languages, then Thai. Paths are relative so the base path still holds.
+    -->
+    <script>
+      (function () {
+        var lang = 'th';
+        try {
+          var stored = document.cookie.match(/(?:^|;\s*)NEXT_LOCALE=(th|en)(?:;|$)/);
+          if (stored) {
+            lang = stored[1];
+          } else {
+            var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+            for (var i = 0; i < langs.length; i++) {
+              var primary = String(langs[i]).toLowerCase().split(/[-;,\s]/)[0];
+              if (primary === 'th' || primary === 'en') {
+                lang = primary;
+                break;
+              }
+            }
+          }
+        } catch (e) {}
+        location.replace(lang + location.search + location.hash);
+      })();
+    </script>
+    <noscript><meta http-equiv="refresh" content="0; url=th" /></noscript>
+  </head>
+  <body>
+    <p><a href="th">ภาษาไทย</a> · <a href="en">English</a></p>
+  </body>
+</html>

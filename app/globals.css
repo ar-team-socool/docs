@@ -11,6 +11,7 @@
   --ar-gray-200: hsl(0 0% 92%);
   --ar-gray-400: hsl(0 0% 92%);
   --ar-gray-500: hsl(0 0% 79%);
+  --ar-gray-600: hsl(0 0% 66%);
   --ar-gray-700: hsl(0 0% 56%);
   --ar-gray-800: hsl(0 0% 49%);
   --ar-gray-900: hsl(0 0% 30%);
@@ -36,6 +37,7 @@ html.dark {
   --ar-gray-200: hsl(0 0% 12%);
   --ar-gray-400: hsl(0 0% 18%);
   --ar-gray-500: hsl(0 0% 27%);
+  --ar-gray-600: hsl(0 0% 53%);
   --ar-gray-700: hsl(0 0% 56%);
   --ar-gray-800: hsl(0 0% 49%);
   --ar-gray-900: hsl(0 0% 63%);
@@ -74,18 +76,135 @@ samp {
 
 /* ---- Navbar ---- */
 
+/* Vercel's bar: solid page colour, no hairline, logo / section, tabs on the left, buttons on the right. */
 .nextra-navbar-blur {
+  border-bottom-color: transparent;
   background: var(--ar-bg);
   backdrop-filter: none;
+}
+
+.nextra-navbar nav {
+  gap: 12px;
 }
 
 .ar-brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 15px;
+  gap: 6px;
+}
+
+.ar-slash {
+  color: var(--ar-gray-600);
+}
+
+.ar-section {
+  color: var(--ar-gray-900);
+  font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+}
+
+.nextra-navbar .nextra-scrollbar {
+  gap: 0;
+}
+
+.nextra-navbar .nextra-scrollbar > a {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 6px;
+  color: var(--ar-gray-900);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.nextra-navbar .nextra-scrollbar > a:hover,
+.nextra-navbar .nextra-scrollbar > a[aria-current] {
+  color: var(--ar-gray-1000);
+}
+
+/* Search lives at the top of the sidebar on desktop (components/sidebar-search.jsx). */
+.nextra-navbar .nextra-search {
+  display: none;
+}
+
+.ar-sidebar-search {
+  padding: 16px 16px 8px;
+}
+
+.ar-sidebar-search .nextra-search input {
+  width: 100%;
+}
+
+.ar-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: var(--ar-bg-100);
+  box-shadow: 0 0 0 1px var(--ar-gray-400);
+  color: var(--ar-gray-1000);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.15s;
+}
+
+.ar-btn:hover {
+  background: var(--ar-gray-100);
+}
+
+.ar-btn-primary {
+  background: var(--ar-gray-1000);
+  box-shadow: none;
+  color: var(--ar-bg-100);
+}
+
+.ar-btn-primary:hover {
+  background: var(--ar-gray-900);
+}
+
+.ar-short {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .ar-long {
+    display: none;
+  }
+
+  .ar-short {
+    display: inline;
+  }
+
+  .ar-nav-actions {
+    gap: 8px;
+  }
+
+  .ar-section {
+    font-size: 16px;
+  }
+}
+
+.nextra-navbar nav > a:first-child {
+  flex-shrink: 0;
+}
+
+/* The narrowest phones keep the logo and the two buttons; the section name goes first. */
+@media (max-width: 359px) {
+  .ar-slash,
+  .ar-section {
+    display: none;
+  }
 }
 
 .ar-logo-dark {
@@ -414,6 +533,24 @@ div:has(> footer) {
 
 /* ---- 404 ---- */
 
+.ar-not-found-page {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--ar-bg);
+  color: var(--ar-gray-1000);
+}
+
+.ar-not-found-code {
+  color: var(--ar-gray-800);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 14px;
+}
+
+.ar-not-found-links {
+  display: flex;
+  gap: 12px;
+}
+
 .ar-not-found {
   display: flex;
   flex-direction: column;
@@ -435,6 +572,7 @@ div:has(> footer) {
 
 .ar-not-found a {
   margin-top: 8px;
+  text-decoration: none;
   padding: 8px 12px;
   border-radius: 6px;
   background: var(--ar-gray-1000);
