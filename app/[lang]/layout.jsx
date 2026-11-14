@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { NavActions } from '../../components/nav-actions';
 import { CopyPageLink, HeadingLinkCopier } from '../../components/share-link';
 import { SidebarSearch } from '../../components/sidebar-search';
+import { TocActiveHeading } from '../../components/toc-active';
 import logoBlack from '../../assets/logo-black.png';
 import logoWhite from '../../assets/logo-white.png';
 import { DICT, LANGS } from '../dictionaries';
@@ -61,6 +62,7 @@ export default async function RootLayout({ children, params }) {
       <NavActions lang={lang} other={other} label={t.switchTo} shortLabel={t.switchToShort} />
       <SidebarSearch>{search}</SidebarSearch>
       <HeadingLinkCopier done={t.linkCopied} />
+      <TocActiveHeading />
     </Navbar>
   );
 
