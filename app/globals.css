@@ -301,11 +301,14 @@ html.dark .ar-logo-dark {
 
 /* ---- Table of contents ---- */
 
-/* A 1px track down the left of the list, items 32px tall
-   at 16px in (32px for a sub-heading), and the current one in gray-1000 with its own segment of
-   the track lit. Nextra spaces items with margins and indents with margins; both become padding
-   here so the items touch and the track drawn on each one reads as a single line. Headings wrap
-   rather than truncate, because Thai headings here run longer than the column. */
+/* A 1px track down the left of the list, items 32px tall at 16px in (32px for a sub-heading), and
+   the current one in gray-1000 with its own segment of the track lit. The track is the list's own
+   background, which stays put while the list scrolls, so it always runs the full height of the
+   column down to the last item; the list loses Nextra's top-and-bottom fade, its bottom and right
+   padding and its reserved scrollbar gutter, any of which cut the track short or push the
+   scrollbar away from the items. Nextra spaces and indents items with margins; both become padding
+   here so the items touch. Headings wrap rather than truncate, because Thai headings here run
+   longer than the column. */
 nav.nextra-toc p {
   padding-bottom: 8px;
   color: var(--ar-gray-800);
@@ -315,20 +318,16 @@ nav.nextra-toc p {
 }
 
 nav.nextra-toc ul {
-  padding-top: 0;
+  padding: 0 0 0 16px;
+  background: linear-gradient(var(--ar-alpha-400), var(--ar-alpha-400)) 16px 0 / 1px 100% no-repeat;
+  -webkit-mask-image: none;
+  mask-image: none;
+  scrollbar-gutter: auto;
 }
 
 nav.nextra-toc li {
   position: relative;
   margin: 0;
-}
-
-nav.nextra-toc li::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 1px;
-  background: var(--ar-alpha-400);
 }
 
 nav.nextra-toc a {
