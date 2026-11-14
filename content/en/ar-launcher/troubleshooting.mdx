@@ -1,14 +1,118 @@
 ---
 title: Troubleshooting
-description: What each warning in AR Launcher means, and how to fix it
+description: What each message in AR Launcher means, when it opens and when you connect, and how to fix it
 ---
 
 import { Callout } from 'nextra/components'
 
 # Troubleshooting
 
-The sections on this page are named after the windows AR Launcher shows. Find the one that matches what you
-see. If it still does not work after following the steps, [send your log file to the team](/en/ar-launcher/send-log).
+The sections on this page are named after the messages AR Launcher shows, when it opens and when you
+connect to a server. Find the one that matches what you see. If it still does not work after following the steps, [send your log file to the team](/en/ar-launcher/send-log).
+
+## AR Launcher does not get past startup [#startup]
+
+When AR Launcher opens it checks that everything is ready, one step at a time. If a step fails, a red
+message under the logo says why. Find the section below that matches it.
+If the message says an unexpected error occurred, a secure connection could not be set up, or the server
+information could not be loaded, press **Try again**. If it keeps happening,
+[send your log file to the team](/en/ar-launcher/send-log).
+
+### No internet connection was found [#startup-internet]
+
+Check that your PC is connected to the internet, then press **Try again**.
+
+### Could not connect to AR Launcher [#startup-connection]
+
+If you use a VPN, an internet booster or a custom DNS, turn it off, then press **Try again**.
+If the message says your connection could not be confirmed, check your internet connection first, then
+press **Try again**.
+
+### This PC's date or time is wrong [#startup-clock]
+
+The date and time this PC is using are shown under the message. Correct them through Windows rather than
+setting the clock by hand.
+
+1. Open Windows **Settings** and go to **Time & language** → **Date & time**.
+2. Turn on **Set time automatically**.
+3. If the time is still wrong, choose the **Time zone** for the country you are in, for example
+   **(UTC+07:00) Bangkok, Hanoi, Jakarta** for Thailand.
+4. Go back to AR Launcher and press **Try again**.
+
+### An update is required, but no new version is available yet [#startup-update]
+
+The installed version must be updated before it can be used, but AR Launcher could not find a new version
+to install. Press **Try again** later.
+If it keeps happening, download the latest installer from the [install page](/en/ar-launcher/install#download)
+and install it over the old one.
+
+### Reinstall AR Launcher [#startup-reinstall]
+
+A file that screen capture needs is missing, or does not match the installed version of AR Launcher.
+Download the installer from the [install page](/en/ar-launcher/install#download) and install again. Use a
+file from the official channels only.
+
+### Antivirus software is blocking screen capture [#startup-capture-blocked]
+
+Open your antivirus protection history, allow the most recently blocked item, then press **Try again**.
+If you use Windows Security, go to **Virus & threat protection** → **Protection history**.
+
+### Windows cannot capture the screen [#startup-capture-unsupported]
+
+Update Windows through **Windows Update** in **Settings**, and update your graphics driver from its
+maker's website (NVIDIA, AMD or Intel), then press **Try again**.
+If the message says Windows refused screen capture, it is not caused by your antivirus. It usually
+happens on modified or stripped-down Windows, and you need a standard, up-to-date Windows 10 or 11.
+
+### The Windows screen-capture service is turned off [#startup-capture-service]
+
+This is usually done by a Windows tweaking tool.
+
+1. Restart your PC.
+2. Open AR Launcher.
+3. Choose **Yes** when Windows asks for permission. AR Launcher turns the service back on.
+
+### User Account Control (UAC) is turned off [#startup-uac-off]
+
+UAC is turned off on this PC, which is the likely reason Windows refused screen capture. Fixing it
+requires an administrator account on this PC.
+
+1. Press **Open UAC settings** under the message. If the window does not open, press Windows + R, type
+   `UserAccountControlSettings` and press Enter.
+2. Move the slider to the second level from the top, which is the Windows default, and press **OK**.
+3. Restart your PC, then open AR Launcher again.
+
+### The built-in Administrator account [#startup-builtin-admin]
+
+This PC signs in with the Administrator account that comes with Windows, with UAC turned off, which is
+the likely reason Windows refused screen capture.
+
+1. Press **Copy command** under the message.
+2. Press Windows + R, type `cmd` and press Enter.
+3. Right-click in the black window to paste the command, then press Enter.
+4. Restart your PC, then open AR Launcher again.
+
+The command turns UAC on for this PC and this account. If it could not be copied, copy it from here.
+
+```txt
+cmd /c "reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f && reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v FilterAdministratorToken /t REG_DWORD /d 1 /f"
+```
+
+If it still does not work, create a new administrator account in Windows and use that one instead.
+
+### FiveM is running when AR Launcher opens [#startup-fivem-running]
+
+FiveM has to be closed before AR Launcher can start. Press **Close FiveM**, and AR Launcher closes it and
+checks again by itself.
+If it could not close FiveM, end it in Task Manager, then press **Try again**.
+
+### GTA V's settings file [#startup-gta-settings]
+
+- The settings file was not found: start the game through FiveM once so it creates the file, then press
+  **Try again**.
+- The settings file is damaged or unreadable: start the game through FiveM and save your graphics
+  settings again.
+- Your graphics settings could not be checked: press **Try again**.
 
 ## The anti-cheat is not running [#anticheat-not-running]
 
