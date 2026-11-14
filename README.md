@@ -1,85 +1,79 @@
-# AR Team Docs
+<p align="center">
+  <a href="https://ar-docs.wip-town.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/logo-white.png">
+      <img src="assets/logo-black.png" alt="AR Team" width="72" height="72">
+    </picture>
+  </a>
+</p>
 
-คู่มือการใช้งานสำหรับผู้เล่น สร้างด้วย [Nextra 4](https://nextra.site) และเผยแพร่บน GitHub Pages
+<h1 align="center">AR Team Docs</h1>
 
-## เขียนเนื้อหา
+<p align="center">
+  คู่มือทางการของ AR Team สำหรับผู้เล่นทุกเซิร์ฟเวอร์<br>
+  Official AR Team guides for players on every server
+</p>
 
-- มีสองภาษา: ไทยอยู่ใน `content/th/` อังกฤษอยู่ใน `content/en/` ทุกหน้าต้องมีครบทั้งสองภาษา ชื่อไฟล์เดียวกัน
-- หนึ่งไฟล์ `.mdx` คือหนึ่งหน้า ลำดับและชื่อในเมนูซ้ายกำหนดใน `_meta.js` ของแต่ละโฟลเดอร์
-- ทุกหัวข้อต้องมี id ภาษาอังกฤษท้ายหัวข้อ และใช้ id เดียวกันทั้งสองภาษา เช่น
-  `## บัญชี Steam ไม่ตรง [#steam-mismatch]` กับ `## Steam account mismatch [#steam-mismatch]`
-  ปุ่มเปลี่ยนภาษาจะพาไปหัวข้อเดิมในอีกภาษา และลิงก์ที่ทีมงานส่งให้ผู้เล่นจะสั้นและอ่านออก
-- ลิงก์ภายในเขียนเต็มพร้อมภาษา เช่น `/th/ar-launcher/play` หรือ `/en/ar-launcher/play`
-- คำบนหน้าเว็บที่ไม่ใช่เนื้อหา (ช่องค้นหา สารบัญ ปุ่ม) อยู่ใน `app/dictionaries.js`
+<p align="center">
+  <a href="https://ar-docs.wip-town.com"><strong>ar-docs.wip-town.com</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://ar-docs.wip-town.com/th">ภาษาไทย</a>
+  &nbsp;·&nbsp;
+  <a href="https://ar-docs.wip-town.com/en">English</a>
+</p>
 
-### ภาษาเริ่มต้น
+<p align="center">
+  <a href="https://github.com/ar-team-socool/docs/actions/workflows/deploy.yml"><img src="https://github.com/ar-team-socool/docs/actions/workflows/deploy.yml/badge.svg" alt="Deploy docs"></a>
+</p>
 
-หน้า `/` (`public/index.html`) พาผู้อ่านไปภาษาของเขาตามลำดับนี้
+---
 
-1. ภาษาที่เคยเลือกด้วยปุ่มเปลี่ยนภาษา (คุกกี้ `NEXT_LOCALE`)
-2. มีภาษาไทยอยู่ที่ไหนก็ได้ในรายการภาษาของเบราว์เซอร์ → ไทย
-   (ผู้เล่นไทยหลายคนตั้งเบราว์เซอร์เป็นอังกฤษไว้ก่อนไทย)
-3. เครื่องตั้งเขตเวลาไทย (`Asia/Bangkok`) → ไทย สำหรับคนที่ตั้งเบราว์เซอร์เป็นอังกฤษอย่างเดียว
-4. ไม่เข้าข้อไหนเลย → อังกฤษ
+## ภาษาไทย
 
-`scripts/choose-lang.test.mjs` รันกฎนี้จากไฟล์จริง (`pnpm test`) แก้กฎเมื่อไรให้แก้เทสต์ไปด้วย
+AR Team Docs คือคู่มือการใช้งานโปรแกรมของ AR Team อ่านได้ที่ **[ar-docs.wip-town.com](https://ar-docs.wip-town.com)** มีทั้งภาษาไทยและภาษาอังกฤษ ค้นหาได้ทั้งสองภาษา และเปิดบนมือถือได้
 
-### คำที่ใช้
+### AR Launcher
 
-- ชื่อเว็บคือ **AR Team Docs** ทั้งสองภาษา และข้างโลโก้เขียน **Docs** เพราะเป็นชื่อ ไม่ใช่คำอธิบาย
-- เรียกโปรแกรมว่า **AR Launcher** เต็มในประโยค (ไม่ใช้ "ลันเชอร์" หรือ "the launcher") ตามข้อตกลงข้อความของ AR Launcher
-- คำที่บอกให้ทำอะไร (ปุ่ม ช่องค้นหา เมนู) และเนื้อหา ใช้ภาษาของหน้านั้น
-- เวลาเขียนชื่อภาษาอังกฤษในประโยคภาษาไทย ให้เว้นวรรคหน้าและหลังชื่อ
+| หัวข้อ | เนื้อหา |
+| --- | --- |
+| [เริ่มต้น](https://ar-docs.wip-town.com/th/ar-launcher) | AR Launcher คืออะไร และเครื่องต้องมีอะไรบ้าง |
+| [ดาวน์โหลดและติดตั้ง](https://ar-docs.wip-town.com/th/ar-launcher/install) | ขั้นตอนติดตั้ง และหน้าต่างที่อาจเจอระหว่างติดตั้ง |
+| [เข้าเล่นเซิร์ฟเวอร์](https://ar-docs.wip-town.com/th/ar-launcher/play) | เปิด AR Launcher เชื่อมต่อเซิร์ฟเวอร์ และสิ่งที่ต้องรู้ระหว่างเล่น |
+| [แก้ปัญหา](https://ar-docs.wip-town.com/th/ar-launcher/troubleshooting) | ความหมายของหน้าต่างแจ้งเตือนแต่ละแบบ และวิธีแก้ |
+| [ส่งไฟล์ log ให้ทีมงาน](https://ar-docs.wip-town.com/th/ar-launcher/send-log) | วิธีหาไฟล์ log เพื่อให้ทีมงานช่วยตรวจปัญหา |
 
-### กติกาเนื้อหา
+ดาวน์โหลด AR Launcher ได้ที่ [ar-launcher.wip-town.com](https://ar-launcher.wip-town.com/?lang=th)
 
-repo นี้เป็น public ทุกคนอ่านได้ทั้งเนื้อหาและประวัติ
+### ต้องการความช่วยเหลือ
 
-- ข้อความทุกข้อต้องตรงกับที่โปรแกรมทำจริง ตรวจกับโค้ดหรือข้อความในโปรแกรมก่อนเขียน
-- ใช้คำเดียวกับที่ผู้เล่นเห็นในโปรแกรม (ชื่อปุ่ม ชื่อหน้าต่าง)
-- ห้ามอธิบายว่าระบบแอนตี้ชีตทำงานหรือตรวจอะไร และห้ามใส่ข้อมูลภายในของทีม
+กรุณาติดต่อทีมงานของเซิร์ฟเวอร์ที่คุณเล่นผ่าน Discord ของเซิร์ฟเวอร์นั้น repo นี้ใช้เก็บเนื้อหาของคู่มือเท่านั้น ไม่ได้เป็นช่องทางรับแจ้งปัญหา
 
-## รันในเครื่อง
+---
 
-ต้องใช้ Node 24 และเปิด Corepack (`corepack enable`)
+## English
 
-```bash
-pnpm install
-pnpm dev          # http://localhost:3210 (ช่องค้นหายังไม่ทำงานในโหมดนี้)
-pnpm build        # สร้างเว็บลง out/ พร้อมดัชนีค้นหา
-pnpm serve        # เปิด out/ แบบเดียวกับ GitHub Pages ที่ http://127.0.0.1:3211
-```
+AR Team Docs is the official guide to AR Team's programs. Read it at **[ar-docs.wip-town.com](https://ar-docs.wip-town.com/en)**, in Thai or English, with search in both languages, on desktop or mobile.
 
-ช่องค้นหาใช้ Pagefind ซึ่งสร้างดัชนีหลัง build จึงต้องทดสอบด้วย `pnpm build` แล้ว `pnpm serve`
+### AR Launcher
 
-## เผยแพร่
+| Topic | What it covers |
+| --- | --- |
+| [Getting started](https://ar-docs.wip-town.com/en/ar-launcher) | What AR Launcher is, and what your PC needs |
+| [Download and install](https://ar-docs.wip-town.com/en/ar-launcher/install) | Installing, and the prompts you may see along the way |
+| [Joining a server](https://ar-docs.wip-town.com/en/ar-launcher/play) | Opening AR Launcher, connecting, and what to know while you play |
+| [Troubleshooting](https://ar-docs.wip-town.com/en/ar-launcher/troubleshooting) | What each warning means, and how to fix it |
+| [Send your log file](https://ar-docs.wip-town.com/en/ar-launcher/send-log) | Finding your log file so the team can look into a problem |
 
-เว็บอยู่ที่ **https://ar-docs.wip-town.com** (ตั้งไว้ใน `app/site.js` ใช้ทำลิงก์ canonical, ลิงก์คู่ภาษา และ `sitemap.xml`)
+Download AR Launcher from [ar-launcher.wip-town.com](https://ar-launcher.wip-town.com/?lang=en).
 
-push เข้า `main` แล้ว `.github/workflows/deploy.yml` จะทดสอบ build และเผยแพร่ให้เอง
+### Need help?
 
-ตั้งค่าครั้งแรก (ทำครั้งเดียว)
+Please contact the team of the server you play on, through that server's Discord. This repository holds the content of the docs only and is not a support channel.
 
-1. ที่ Cloudflare ของ `wip-town.com` เพิ่ม DNS แบบ `CNAME` ชื่อ `ar-docs` ชี้ไปที่ `ar-team-socool.github.io`
-   ตั้งเป็น **DNS only (เมฆสีเทา)** เพื่อให้ GitHub ออกใบรับรอง HTTPS ได้
-2. ใน repo ไปที่ Settings → Pages
-   - Source: **GitHub Actions**
-   - Custom domain: `ar-docs.wip-town.com`
-   - เมื่อ GitHub ตรวจ DNS ผ่านแล้ว ให้ติ๊ก **Enforce HTTPS**
-3. (แนะนำ) ยืนยันโดเมน `wip-town.com` ในการตั้งค่า Pages ของ org เพื่อกันคนอื่นเอา subdomain ไปใช้
+---
 
-การ deploy ผ่าน Actions ไม่ใช้ไฟล์ `CNAME` จึงไม่มีไฟล์นี้ใน repo
-
-ถ้าต้องการลองแบบมี base path (เช่น `/docs`) ให้ build ด้วย `PAGES_BASE_PATH=/docs`
-แล้วเปิดด้วย `node scripts/serve.mjs 3212 /docs`
-
-## ข้อควรรู้
-
-- **ช่องค้นหาบนเดสก์ท็อปอยู่บนสุดของเมนูซ้าย** แบบ Vercel ซึ่ง Nextra ไม่มีให้ตรง ๆ
-  `components/sidebar-search.jsx` จึงย้ายช่องค้นหาเข้าไปในเมนูซ้ายทุกครั้งที่เปลี่ยนหน้า
-  ส่วนช่องเดิมบนแถบบนถูกซ่อนด้วย CSS
-- **ลิงก์ในเมนูต้องมีภาษานำหน้า** (`unstable_shouldAddLocaleToLinks` ใน `next.config.mjs`) ปกติ Nextra
-  ให้ middleware ฝั่ง server เติมภาษาให้ แต่ GitHub Pages ไม่มี server
-- **zod ถูกล็อกไว้ที่ 4.1.13** (`pnpm.overrides` ใน `package.json`) เพราะ Nextra 4.6.1 ใช้กับ zod 4.6 ไม่ได้
-  build จะพังด้วยข้อความ `expected nonoptional, received undefined → at children`
-  ถ้าอัปเดต Nextra รุ่นใหม่ ให้ลองปลดล็อกแล้ว build ดู
+<p align="center">
+  สำหรับทีมงานที่แก้ไขคู่มือ · For the team editing the docs: <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>
+  <br><br>
+  © 2026 AR Team
+</p>
