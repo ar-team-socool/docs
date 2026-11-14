@@ -32,6 +32,8 @@
 
 AR Team Docs รวมเอกสารและคู่มือการใช้งานโปรเจกต์ของ AR Team ไว้ในที่เดียว อ่านได้ที่ **[ar-docs.wip-town.com](https://ar-docs.wip-town.com)** มีทั้งภาษาไทยและภาษาอังกฤษ ค้นหาได้ทั้งสองภาษา และเปิดบนมือถือได้
 
+เวลาแชร์ลิงก์ ใช้ลิงก์ที่ไม่มี `/th` หรือ `/en` เช่น `https://ar-docs.wip-town.com/ar-launcher/troubleshooting` ผู้อ่านแต่ละคนจะได้ภาษาของตัวเอง กด "คัดลอกลิงก์หน้านี้" ใต้สารบัญ หรือกด `#` ข้างหัวข้อ เพื่อคัดลอกลิงก์แบบนี้ได้ทันที
+
 ### โปรเจกต์
 
 โปรเจกต์อื่นของทีมจะทยอยเพิ่มเข้ามา
@@ -59,6 +61,8 @@ AR Team Docs รวมเอกสารและคู่มือการใ�
 ## English
 
 AR Team Docs brings the documentation and guides for AR Team's projects together in one place. Read it at **[ar-docs.wip-town.com](https://ar-docs.wip-town.com/en)**, in Thai or English, with search in both languages, on desktop or mobile.
+
+To share a page, use its address without `/th` or `/en`, such as `https://ar-docs.wip-town.com/ar-launcher/troubleshooting`: each reader gets their own language. "Copy link to this page" under the table of contents, or the `#` beside a heading, copies such a link.
 
 ### Projects
 

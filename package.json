@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "next dev --port 3210",
-    "build": "next build && pagefind --site .next/server/app --output-path out/_pagefind",
+    "build": "next build && pagefind --site .next/server/app --output-path out/_pagefind && node scripts/neutral-links.mjs",
     "serve": "node scripts/serve.mjs",
     "test": "node --test \"scripts/*.test.mjs\""
   },

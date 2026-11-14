@@ -322,6 +322,53 @@ nav.nextra-toc a[class*='text-primary'] {
   font-weight: 500;
 }
 
+/* ---- Sharing a page: the button under the table of contents, and the note a # click leaves ---- */
+
+.ar-copy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 4px 0;
+  color: var(--ar-gray-900);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ar-copy-link:hover {
+  color: var(--ar-gray-1000);
+}
+
+.ar-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  z-index: 50;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: var(--ar-gray-1000);
+  color: var(--ar-bg-100);
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
+}
+
+.ar-toast-shown {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ar-toast {
+    transition: none;
+  }
+}
+
 /* ---- Article ---- */
 
 article {

@@ -3,6 +3,7 @@ import { Head, Search } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
 import Image from 'next/image';
 import { NavActions } from '../../components/nav-actions';
+import { CopyPageLink, HeadingLinkCopier } from '../../components/share-link';
 import { SidebarSearch } from '../../components/sidebar-search';
 import logoBlack from '../../assets/logo-black.png';
 import logoWhite from '../../assets/logo-white.png';
@@ -59,6 +60,7 @@ export default async function RootLayout({ children, params }) {
     >
       <NavActions lang={lang} other={other} label={t.switchTo} shortLabel={t.switchToShort} />
       <SidebarSearch>{search}</SidebarSearch>
+      <HeadingLinkCopier done={t.linkCopied} />
     </Navbar>
   );
 
@@ -78,7 +80,11 @@ export default async function RootLayout({ children, params }) {
           editLink={null}
           feedback={{ content: null }}
           copyPageButton={false}
-          toc={{ title: t.toc, backToTop: t.backToTop }}
+          toc={{
+            title: t.toc,
+            backToTop: t.backToTop,
+            extraContent: <CopyPageLink label={t.copyLink} done={t.linkCopied} />,
+          }}
           themeSwitch={{ dark: t.themeDark, light: t.themeLight, system: t.themeSystem }}
           nextThemes={{ defaultTheme: 'dark' }}
           lastUpdated={<LastUpdated locale={lang}>{t.lastUpdated}</LastUpdated>}
