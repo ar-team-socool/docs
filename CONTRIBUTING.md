@@ -93,6 +93,6 @@ push เข้า `main` แล้ว `.github/workflows/deploy.yml` จะท�
 
 ## ข้อควรรู้
 
-- **ช่องค้นหาบนเดสก์ท็อปอยู่บนสุดของเมนูซ้าย** แบบ Vercel ซึ่ง Nextra ไม่มีให้ตรง ๆ `components/sidebar-search.jsx` จึงย้ายช่องค้นหาเข้าไปในเมนูซ้ายทุกครั้งที่เปลี่ยนหน้า ส่วนช่องเดิมบนแถบบนถูกซ่อนด้วย CSS
+- **ช่องค้นหาบนเดสก์ท็อปอยู่บนสุดของเมนูซ้าย** ซึ่ง Nextra ไม่มีให้ตรง ๆ `components/sidebar-search.jsx` จึงย้ายช่องค้นหาเข้าไปในเมนูซ้ายทุกครั้งที่เปลี่ยนหน้า ส่วนช่องเดิมบนแถบบนถูกซ่อนด้วย CSS
 - **ลิงก์ในเมนูต้องมีภาษานำหน้า** (`unstable_shouldAddLocaleToLinks` ใน `next.config.mjs`) ปกติ Nextra ให้ middleware ฝั่ง server เติมภาษาให้ แต่ GitHub Pages ไม่มี server
 - **zod ถูกล็อกไว้ที่ 4.1.13** (`pnpm.overrides` ใน `package.json`) เพราะ Nextra 4.6.1 ใช้กับ zod 4.6 ไม่ได้ build จะพังด้วยข้อความ `expected nonoptional, received undefined → at children` ถ้าอัปเดต Nextra รุ่นใหม่ ให้ลองปลดล็อกแล้ว build ดู

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 /**
- * Puts the search box at the top of the desktop sidebar, where Vercel's docs keep it.
+ * Puts the search box at the top of the desktop sidebar.
  *
  * The theme draws search only in the top bar (desktop) and the mobile menu, and the sidebar is part of
  * each page, so it is replaced on every navigation. One host element is kept and moved into whichever

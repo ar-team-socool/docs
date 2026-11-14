@@ -1,7 +1,7 @@
 /*
- * Vercel-docs look over the Nextra theme. Values are read off vercel.com/docs (2026-11-15) in both
- * themes: Geist's gray scale, its type sizes and its 6px radius. The theme's own CSS sits in cascade
- * layers, so these unlayered rules win without !important.
+ * AR Team Docs' own look over the Nextra theme: one neutral gray scale, one set of type sizes and a
+ * 6px radius, in both themes. The theme's own CSS sits in cascade layers, so these unlayered rules
+ * win without !important.
  */
 
 :root {
@@ -76,7 +76,7 @@ samp {
 
 /* ---- Navbar ---- */
 
-/* Vercel's bar: solid page colour, no hairline, logo / section, tabs on the left, buttons on the right. */
+/* The top bar: solid page colour, no hairline, logo / section, tabs on the left, buttons on the right. */
 .nextra-navbar-blur {
   border-bottom-color: transparent;
   background: var(--ar-bg);
@@ -301,11 +301,11 @@ html.dark .ar-logo-dark {
 
 /* ---- Table of contents ---- */
 
-/* As Vercel's docs (measured 2026-11-15): a 1px track down the left of the list, items 32px tall
+/* A 1px track down the left of the list, items 32px tall
    at 16px in (32px for a sub-heading), and the current one in gray-1000 with its own segment of
    the track lit. Nextra spaces items with margins and indents with margins; both become padding
    here so the items touch and the track drawn on each one reads as a single line. Headings wrap
-   rather than truncate as Vercel's do, because Thai headings here run longer than the column. */
+   rather than truncate, because Thai headings here run longer than the column. */
 nav.nextra-toc p {
   padding-bottom: 8px;
   color: var(--ar-gray-800);
@@ -426,7 +426,7 @@ article {
   color: var(--ar-gray-1000);
 }
 
-/* Thai stacks marks above and below the line, so headings get more leading than Vercel's Latin. */
+/* Thai stacks marks above and below the line, so headings get more leading than Latin would need. */
 main h1 {
   margin-top: 16px;
   color: var(--ar-gray-1000);
@@ -510,7 +510,7 @@ main pre {
   background: var(--ar-bg-100);
 }
 
-/* ---- Scrollbars, as Vercel's docs (measured 2026-11-15) ----
+/* ---- Scrollbars ----
    The page keeps the browser's own bar, drawn dark by color-scheme, with its gutter reserved so a
    short page does not sit wider than a long one. The left menu scrolls with no bar at all, "On
    this page" uses the browser's own, and code blocks use the thin gray-600 one set on main pre. */
@@ -538,7 +538,7 @@ main kbd {
   font-size: 0.85em;
 }
 
-/* ---- Callouts, as Geist's Note ---- */
+/* ---- Callouts ---- */
 
 .nextra-callout {
   align-items: flex-start;
@@ -617,7 +617,7 @@ main kbd {
   box-shadow: none;
 }
 
-/* The theme draws a card's text above its title; Vercel's cards put the title first. */
+/* The theme draws a card's text above its title; these cards put the title first. */
 .nextra-card {
   display: flex;
   flex-direction: column-reverse;
