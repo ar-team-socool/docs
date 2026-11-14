@@ -2,6 +2,8 @@ import nextra from 'nextra';
 
 const withNextra = nextra({
   search: { codeblocks: false },
+  // A copy button on every code block, which Nextra leaves off unless asked.
+  defaultShowCopyCode: true,
   // Nextra otherwise writes links without /th or /en and relies on its middleware to add one,
   // and a static site on GitHub Pages runs no middleware.
   unstable_shouldAddLocaleToLinks: true,

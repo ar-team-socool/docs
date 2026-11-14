@@ -65,6 +65,12 @@ import { Callout } from 'nextra/components'
 
 ### ปิดการควบคุมบัญชีผู้ใช้ (UAC) ไว้ [#startup-uac-off]
 
+<Callout type="warning">
+  **ถ้าเครื่องนี้ไม่ได้ติดตั้ง Windows จากไฟล์ของ Microsoft** เช่น Windows ที่มีคนดัดแปลงหรือตัดฟีเจอร์ออก
+  การเปิด UAC กลับมาอาจทำให้เครื่องขอสิทธิ์ผู้ดูแลระบบไม่ได้อีก และอาจต้องเข้า Safe Mode เพื่อแก้กลับ
+  ถ้าไม่แน่ใจ ให้ติดต่อทีมงานก่อนทำ
+</Callout>
+
 เครื่องนี้ปิด User Account Control (UAC) ไว้ ซึ่งน่าจะเป็นเหตุที่ Windows ไม่อนุญาตให้จับภาพหน้าจอ ต้องใช้บัญชีผู้ดูแลระบบ (Administrator) ของเครื่องนี้ในการแก้
 
 1. กด **เปิดการตั้งค่า UAC** ใต้ข้อความ ถ้าหน้าต่างไม่ขึ้น ให้กดปุ่ม Windows + R พิมพ์ `UserAccountControlSettings` แล้วกด Enter
@@ -72,6 +78,12 @@ import { Callout } from 'nextra/components'
 3. รีสตาร์ทเครื่อง แล้วเปิด AR Launcher อีกครั้ง
 
 ### ใช้บัญชี Administrator ที่มากับ Windows [#startup-builtin-admin]
+
+<Callout type="warning">
+  **ถ้าเครื่องนี้ไม่ได้ติดตั้ง Windows จากไฟล์ของ Microsoft** เช่น Windows ที่มีคนดัดแปลงหรือตัดฟีเจอร์ออก
+  การเปิด UAC กลับมาอาจทำให้เครื่องขอสิทธิ์ผู้ดูแลระบบไม่ได้อีก และอาจต้องเข้า Safe Mode เพื่อแก้กลับ
+  ถ้าไม่แน่ใจ ให้ติดต่อทีมงานก่อนทำ
+</Callout>
 
 เครื่องนี้เข้าใช้งานด้วยบัญชี Administrator ที่มากับ Windows และปิด UAC ไว้ ซึ่งน่าจะเป็นเหตุที่ Windows ไม่อนุญาตให้จับภาพหน้าจอ
 

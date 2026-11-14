@@ -455,6 +455,16 @@ main pre {
   background: var(--ar-bg-100);
 }
 
+/* Nextra shows the copy button only on hover, which a phone never does and a reader does not
+   know to try. Always shown, on the block's own background so text scrolled under it stays out. */
+.nextra-code pre > div:has(> button) {
+  opacity: 1;
+}
+
+.nextra-code pre > div:has(> button) button {
+  background: var(--ar-bg-100);
+}
+
 main kbd {
   padding: 1px 6px;
   border: 1px solid var(--ar-alpha-400);

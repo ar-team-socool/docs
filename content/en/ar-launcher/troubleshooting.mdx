@@ -75,6 +75,12 @@ This is usually done by a Windows tweaking tool.
 
 ### User Account Control (UAC) is turned off [#startup-uac-off]
 
+<Callout type="warning">
+  **If Windows on this PC was not installed from Microsoft's own files**, for example a modified or
+  stripped-down build, turning UAC back on may leave the PC unable to grant administrator rights, and
+  fixing that may need Safe Mode. If you are not sure, contact the AR team first.
+</Callout>
+
 UAC is turned off on this PC, which is the likely reason Windows refused screen capture. Fixing it
 requires an administrator account on this PC.
 
@@ -84,6 +90,12 @@ requires an administrator account on this PC.
 3. Restart your PC, then open AR Launcher again.
 
 ### The built-in Administrator account [#startup-builtin-admin]
+
+<Callout type="warning">
+  **If Windows on this PC was not installed from Microsoft's own files**, for example a modified or
+  stripped-down build, turning UAC back on may leave the PC unable to grant administrator rights, and
+  fixing that may need Safe Mode. If you are not sure, contact the AR team first.
+</Callout>
 
 This PC signs in with the Administrator account that comes with Windows, with UAC turned off, which is
 the likely reason Windows refused screen capture.
