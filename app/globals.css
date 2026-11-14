@@ -301,16 +301,51 @@ html.dark .ar-logo-dark {
 
 /* ---- Table of contents ---- */
 
+/* As Vercel's docs (measured 2026-11-15): a 1px track down the left of the list, items 32px tall
+   at 16px in (32px for a sub-heading), and the current one in gray-1000 with its own segment of
+   the track lit. Nextra spaces items with margins and indents with margins; both become padding
+   here so the items touch and the track drawn on each one reads as a single line. Headings wrap
+   rather than truncate as Vercel's do, because Thai headings here run longer than the column. */
 nav.nextra-toc p {
   padding-bottom: 8px;
   color: var(--ar-gray-800);
+  font-size: 14px;
   font-weight: 400;
+  line-height: 20px;
+}
+
+nav.nextra-toc ul {
+  padding-top: 0;
+}
+
+nav.nextra-toc li {
+  position: relative;
+  margin: 0;
+}
+
+nav.nextra-toc li::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 1px;
+  background: var(--ar-alpha-400);
 }
 
 nav.nextra-toc a {
+  margin-inline-start: 0;
+  padding: 6px 12px 6px 16px;
   color: var(--ar-gray-900);
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+}
+
+nav.nextra-toc a[class~='x:ms-3'] {
+  padding-left: 32px;
+}
+
+nav.nextra-toc a[class~='x:ms-6'] {
+  padding-left: 48px;
 }
 
 nav.nextra-toc a:hover {
@@ -320,6 +355,14 @@ nav.nextra-toc a:hover {
 nav.nextra-toc a[class*='text-primary'] {
   color: var(--ar-gray-1000);
   font-weight: 500;
+}
+
+nav.nextra-toc li:has(> a[class*='text-primary'])::after {
+  content: '';
+  position: absolute;
+  inset: 4px auto 4px 0;
+  width: 1px;
+  background: var(--ar-gray-1000);
 }
 
 /* ---- Sharing a page: the button under the table of contents, and the note a # click leaves ---- */
