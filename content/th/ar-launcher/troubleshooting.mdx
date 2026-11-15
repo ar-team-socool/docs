@@ -103,6 +103,35 @@ cmd /c "reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /
 ถ้าทำแล้วยังไม่หาย ให้เข้าใช้งาน Windows ด้วยบัญชีผู้ดูแลระบบปกติ ไม่ใช่บัญชี Administrator ที่มากับ Windows
 ถ้าตอนติดตั้ง AR Launcher [เลือกให้ใช้ได้เฉพาะบัญชีเดิม](/th/ar-launcher/install#install-for-whom) ต้องติดตั้ง AR Launcher ใหม่ในบัญชีนั้นด้วย
 
+### เปิดบริการ Application Information ก่อน [#startup-appinfo-off]
+
+เครื่องนี้ปิด User Account Control (UAC) ไว้ ซึ่งน่าจะเป็นเหตุที่ Windows ไม่อนุญาตให้จับภาพหน้าจอ แต่บริการ Application Information ของ Windows ถูกปิดอยู่ด้วย
+เมื่อเปิด UAC แล้ว Windows ใช้บริการนี้ขอสิทธิ์ผู้ดูแลระบบทุกครั้ง ถ้าเปิด UAC ก่อน เครื่องจะขอสิทธิ์ผู้ดูแลระบบไม่ได้ จึงต้องเปิดบริการนี้ก่อน ต้องใช้บัญชีผู้ดูแลระบบ (Administrator) ของเครื่องนี้ในการแก้
+
+1. กด **คัดลอกคำสั่ง** ใต้ข้อความ
+2. กดปุ่ม Windows + R พิมพ์ `cmd` แล้วกด Enter
+3. คลิกขวาในหน้าต่างสีดำเพื่อวางคำสั่ง แล้วกด Enter ถ้าขึ้นว่า `[SC] ChangeServiceConfig SUCCESS` แปลว่าสำเร็จ
+4. กด **ลองอีกครั้ง** ไม่ต้องรีสตาร์ทเครื่อง แล้วทำตามข้อความถัดไปเรื่อง UAC
+
+คำสั่งนี้ตั้งบริการ Application Information กลับเป็น Manual ซึ่งเป็นค่าเริ่มต้นของ Windows ถ้าคัดลอกไม่ได้ ให้คัดลอกจากด้านล่าง
+
+```txt
+sc.exe config Appinfo start= demand
+```
+
+ถ้าขึ้นว่า `Access is denied` ให้ทำจากบัญชีผู้ดูแลระบบของเครื่องนี้
+
+### Windows บนเครื่องนี้ขอสิทธิ์ผู้ดูแลระบบไม่ได้ [#startup-elevation-missing]
+
+เครื่องนี้ปิด User Account Control (UAC) ไว้ ซึ่งน่าจะเป็นเหตุที่ Windows ไม่อนุญาตให้จับภาพหน้าจอ
+แต่ Windows บนเครื่องนี้ไม่มีส่วนที่ใช้ขอสิทธิ์ผู้ดูแลระบบ คือบริการ Application Information หรือไฟล์ `consent.exe` มักพบใน Windows ที่มีคนดัดแปลงหรือตัดฟีเจอร์ออก
+
+<Callout type="error">
+  **อย่าเปิด UAC บนเครื่องนี้** ถ้าเปิด เครื่องจะขอสิทธิ์ผู้ดูแลระบบไม่ได้อีก รวมถึงการปิด UAC กลับ และอาจต้องเข้า Safe Mode เพื่อแก้
+</Callout>
+
+ทางแก้คือใช้ Windows 10 หรือ 11 ฉบับปกติที่ติดตั้งจากไฟล์ของ Microsoft ถ้าไม่แน่ใจ ให้[ส่งไฟล์ log ให้ทีมงาน](/th/ar-launcher/send-log)
+
 ### FiveM เปิดอยู่ตอนเปิด AR Launcher [#startup-fivem-running]
 
 ต้องปิด FiveM ก่อนเริ่มใช้งาน AR Launcher กด **ปิด FiveM** แล้ว AR Launcher จะปิด FiveM และตรวจความพร้อมใหม่เอง

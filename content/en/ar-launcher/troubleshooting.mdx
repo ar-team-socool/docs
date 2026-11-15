@@ -115,6 +115,42 @@ If it still does not work, sign in to Windows with an ordinary administrator acc
 built-in Administrator. If you installed AR Launcher
 [for yourself only](/en/ar-launcher/install#install-for-whom), install it again in that account too.
 
+### Turn on the Application Information service first [#startup-appinfo-off]
+
+UAC is turned off on this PC, which is the likely reason Windows refused screen capture. The Windows
+Application Information service is turned off too. With UAC on, Windows uses that service every time it
+grants administrator rights, so turning UAC on first would leave this PC unable to grant them. Turn the
+service on first. Fixing it requires an administrator account on this PC.
+
+1. Press **Copy command** under the message.
+2. Press Windows + R, type `cmd` and press Enter.
+3. Right-click in the black window to paste the command, then press Enter. `[SC] ChangeServiceConfig SUCCESS`
+   means it worked.
+4. Press **Try again**. No restart is needed. Then follow the next message, about UAC.
+
+The command sets the Application Information service back to Manual, which is the Windows default. If it
+could not be copied, copy it from here.
+
+```txt
+sc.exe config Appinfo start= demand
+```
+
+If it says `Access is denied`, run it from an administrator account on this PC.
+
+### Windows on this PC cannot grant administrator rights [#startup-elevation-missing]
+
+UAC is turned off on this PC, which is the likely reason Windows refused screen capture. But Windows on
+this PC is missing the parts it uses to grant administrator rights: the Application Information service or
+the file `consent.exe`. This usually happens on modified or stripped-down Windows.
+
+<Callout type="error">
+  **Do not turn UAC on here.** This PC could then no longer grant administrator rights at all, not even to
+  turn UAC off again, and fixing that may need Safe Mode.
+</Callout>
+
+The fix is a standard Windows 10 or 11 installed from Microsoft's own files. If you are not sure,
+[send your log file to the team](/en/ar-launcher/send-log).
+
 ### FiveM is running when AR Launcher opens [#startup-fivem-running]
 
 FiveM has to be closed before AR Launcher can start. Press **Close FiveM**, and AR Launcher closes it and
