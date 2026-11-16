@@ -151,19 +151,11 @@ the file `consent.exe`. This usually happens on modified or stripped-down Window
 The fix is a standard Windows 10 or 11 installed from Microsoft's own files. If you are not sure,
 [send your log file to the team](/en/ar-launcher/send-log).
 
-### FiveM is running when AR Launcher opens [#startup-fivem-running]
+### FiveM or RedM is running when AR Launcher opens [#startup-fivem-running]
 
-FiveM has to be closed before AR Launcher can start. Press **Close FiveM**, and AR Launcher closes it and
-checks again by itself.
-If it could not close FiveM, end it in Task Manager, then press **Try again**.
-
-### GTA V's settings file [#startup-gta-settings]
-
-- The settings file was not found: start the game through FiveM once so it creates the file, then press
-  **Try again**.
-- The settings file is damaged or unreadable: start the game through FiveM and save your graphics
-  settings again.
-- Your graphics settings could not be checked: press **Try again**.
+The game has to be closed before AR Launcher can start. Press **Close the game**, and AR Launcher closes
+it and checks again by itself.
+If it could not close the game, end it in Task Manager, then press **Try again**.
 
 ## The anti-cheat is not running [#anticheat-not-running]
 
@@ -199,28 +191,33 @@ Sign in to Windows with an administrator account on this PC, or ask the owner of
 A program on your PC or network is blocking AR Launcher's connection.
 If you use a VPN or an internet booster, turn it off or set it to exclude AR Launcher, then press **Try again**.
 
-## FiveM is using a different Steam account [#steam-mismatch]
+## FiveM or RedM is using a different Steam account [#steam-mismatch]
 
-FiveM is linked to a different Steam account than the one signed in to AR Launcher, so the server refused
-the connection. There are two ways to fix it:
+The game (FiveM or RedM) is linked to a different Steam account than the one signed in to AR Launcher, so
+the server refused the connection. There are two ways to fix it:
 
-- Link the same Steam account as AR Launcher in the FiveM settings, then press **Try again**.
-  AR Launcher restarts FiveM for you.
-- Or sign out, and sign in to AR Launcher with the account FiveM uses.
+- Link the same Steam account as AR Launcher in the game's settings, then press **Try again**.
+  AR Launcher restarts the game for you.
+- Or sign out, and sign in to AR Launcher with the account the game uses.
 
-## Link your Steam account to FiveM [#steam-link]
+## Link your Steam account to FiveM or RedM [#steam-link]
 
-This server requires a Steam account linked to FiveM, and FiveM has to restart after linking, so
-AR Launcher closed FiveM. Press **Try again**. If FiveM asks you to link Steam, use the same account you
+This server requires a Steam account linked to the game, and the game has to restart after linking, so
+AR Launcher closed it. Press **Try again**. If the game asks you to link Steam, use the same account you
 signed in to AR Launcher with.
 
 ## Could not join this server yet [#cannot-join]
 
 The message in the window says why. Find the section below that matches it.
 
-### AR Launcher could not find FiveM [#fivem-not-found]
+### AR Launcher could not find FiveM or RedM [#fivem-not-found]
 
-Open FiveM yourself once, wait for its main screen, close it, then press **Try again**.
+Open that game yourself once, wait for its main screen, close it, then press **Try again**.
+
+### GTA V's settings file was not found [#startup-gta-settings]
+
+The settings file was not found, or could not be read: start the game through FiveM once so it writes its
+settings file again, then press **Try again**.
 
 ### Your graphics settings could not be checked [#settings-unchecked]
 
@@ -228,29 +225,29 @@ Press **Try again**. If it still fails, check your internet connection, then con
 
 ### RedM's settings file was not found [#redm-settings]
 
-- The settings file was not found, or could not be read: open RedM yourself once and wait for its main
-  screen, so it writes its settings file again. Close it, then press **Try again**.
+The settings file was not found, or could not be read: start RedM yourself once so it writes its settings
+file again. Close it, then press **Try again**.
 
 ### The game was not started in pure mode [#pure-mode]
 
-Press **Try again** so AR Launcher starts the game again. Do not start FiveM yourself.
+Press **Try again** so AR Launcher starts the game again. Do not start the game yourself.
 If the message says it could not check, and it happens again, restart your PC and try again.
 
-### FiveM is not on the update channel the server requires [#update-channel]
+### FiveM or RedM is not on the update channel the server requires [#update-channel]
 
-Press **Try again** and let FiveM finish updating. Do not start FiveM yourself.
+Press **Try again** and let the game finish updating. Do not start the game yourself.
 
-### FiveM updated itself and closed [#fivem-updated]
+### FiveM or RedM updated itself and closed [#fivem-updated]
 
-Close FiveM's error window, then press **Try again**.
+Close the game's error window, then press **Try again**.
 
-### FiveM stopped while joining [#fivem-stopped]
+### FiveM or RedM stopped while joining [#fivem-stopped]
 
-This is usually a FiveM crash, so AR Launcher closed the game window it left behind. Press **Try again**.
+This is usually a crash of the game, so AR Launcher closed the game window it left behind. Press **Try again**.
 
-## FiveM is open [#fivem-open]
+## FiveM or RedM is open [#fivem-open]
 
-See [If FiveM is already open](/en/ar-launcher/play#fivem-already-open).
+See [If FiveM or RedM is already open](/en/ar-launcher/play#fivem-already-open).
 
 ## Blocked [#blocked]
 
@@ -260,6 +257,6 @@ administrators.
 ## Kicked out of the game while playing [#kicked]
 
 <Callout type="info">
-  If AR Launcher is closed, crashes or loses its connection, the server kicks you out of the game. Keep AR Launcher
- open the whole time you play.
+  If AR Launcher is closed, crashes or loses its connection, the server may kick you out of the game. Keep
+  AR Launcher open the whole time you play.
 </Callout>

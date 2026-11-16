@@ -40,7 +40,7 @@ AR Team Docs รวมเอกสารและคู่มือการใ�
 
 #### AR Launcher
 
-โปรแกรมสำหรับเข้าเล่นเซิร์ฟเวอร์ FiveM ที่ใช้ระบบของ AR Team
+โปรแกรมสำหรับเข้าเล่นเซิร์ฟเวอร์ FiveM และ RedM ที่ใช้ระบบของ AR Team
 
 | หัวข้อ | เนื้อหา |
 | --- | --- |
@@ -70,7 +70,7 @@ More of the team's projects will be added over time.
 
 #### AR Launcher
 
-The program for joining FiveM servers that run AR Team's system.
+The program for joining FiveM and RedM servers that run AR Team's system.
 
 | Topic | What it covers |
 | --- | --- |
