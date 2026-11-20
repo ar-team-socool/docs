@@ -50,87 +50,18 @@ import { Callout } from 'nextra/components'
 ถ้าใช้ Windows Security ให้ไปที่ **Virus & threat protection** → **Protection history**
 ถ้าไม่มีรายการที่ถูกบล็อก ให้[ส่งไฟล์ log ให้ทีมงาน](/th/ar-launcher/send-log)
 
-### Windows จับภาพหน้าจอไม่ได้ [#startup-capture-unsupported]
+<a id="startup-capture-service" />
+<a id="startup-uac-off" />
+<a id="startup-builtin-admin" />
+<a id="startup-appinfo-off" />
+<a id="startup-elevation-missing" />
 
-อัปเดต Windows ที่ **Windows Update** ใน **Settings** และอัปเดตไดรเวอร์การ์ดจอจากเว็บไซต์ของผู้ผลิต (NVIDIA, AMD หรือ Intel) แล้วกด **ลองอีกครั้ง**
-ถ้าข้อความบอกว่า Windows ไม่อนุญาตให้จับภาพหน้าจอ ปัญหานี้ไม่เกี่ยวกับโปรแกรมป้องกันไวรัส และมักพบใน Windows ที่ถูกดัดแปลงหรือตัดฟีเจอร์ออก ต้องใช้ Windows 10 หรือ 11 ฉบับปกติที่อัปเดตแล้ว
+### Windows จับภาพหน้าจอไม่ได้ หรือข้อความเรื่อง UAC [#startup-capture-unsupported]
 
-### บริการจับภาพหน้าจอของ Windows ถูกปิด [#startup-capture-service]
+ข้อความเหล่านี้มาจาก AR Launcher รุ่นก่อน 0.26.4 ทั้งเรื่องการจับภาพหน้าจอของ Windows เรื่อง User Account Control (UAC) บริการ Application Information และบัญชี Administrator ที่มากับ Windows
 
-มักเกิดจากโปรแกรมปรับแต่ง Windows
-
-1. รีสตาร์ทเครื่อง
-2. เปิด AR Launcher
-3. กด **ใช่** (Yes) เมื่อ Windows ขออนุญาต AR Launcher จะเปิดบริการนี้กลับมาให้
-
-### ปิดการควบคุมบัญชีผู้ใช้ (UAC) ไว้ [#startup-uac-off]
-
-<Callout type="warning">
-  **ถ้าเครื่องนี้ไม่ได้ติดตั้ง Windows จากไฟล์ของ Microsoft** เช่น Windows ที่มีคนดัดแปลงหรือตัดฟีเจอร์ออก
-  **หรือเคยใช้โปรแกรมปรับแต่งที่ปิดบริการของ Windows**
-  การเปิด UAC กลับมาอาจทำให้เครื่องขอสิทธิ์ผู้ดูแลระบบไม่ได้อีก และอาจต้องเข้า Safe Mode เพื่อแก้กลับ
-  ถ้าไม่แน่ใจ ให้ติดต่อทีมงานก่อนทำ
-</Callout>
-
-เครื่องนี้ปิด User Account Control (UAC) ไว้ ซึ่งน่าจะเป็นเหตุที่ Windows ไม่อนุญาตให้จับภาพหน้าจอ ต้องใช้บัญชีผู้ดูแลระบบ (Administrator) ของเครื่องนี้ในการแก้
-
-1. กด **เปิดการตั้งค่า UAC** ใต้ข้อความ ถ้าหน้าต่างไม่ขึ้น ให้กดปุ่ม Windows + R พิมพ์ `UserAccountControlSettings` แล้วกด Enter
-2. เลื่อนแถบไปที่ระดับที่สองจากบนสุด ซึ่งเป็นค่าเริ่มต้นของ Windows แล้วกด **ตกลง** (OK)
-3. รีสตาร์ทเครื่อง แล้วเปิด AR Launcher อีกครั้ง
-
-### ใช้บัญชี Administrator ที่มากับ Windows [#startup-builtin-admin]
-
-<Callout type="warning">
-  **ถ้าเครื่องนี้ไม่ได้ติดตั้ง Windows จากไฟล์ของ Microsoft** เช่น Windows ที่มีคนดัดแปลงหรือตัดฟีเจอร์ออก
-  **หรือเคยใช้โปรแกรมปรับแต่งที่ปิดบริการของ Windows**
-  การเปิด UAC กลับมาอาจทำให้เครื่องขอสิทธิ์ผู้ดูแลระบบไม่ได้อีก และอาจต้องเข้า Safe Mode เพื่อแก้กลับ
-  ถ้าไม่แน่ใจ ให้ติดต่อทีมงานก่อนทำ
-</Callout>
-
-เครื่องนี้เข้าใช้งานด้วยบัญชี Administrator ที่มากับ Windows และปิด UAC ไว้ ซึ่งน่าจะเป็นเหตุที่ Windows ไม่อนุญาตให้จับภาพหน้าจอ
-
-1. กด **คัดลอกคำสั่ง** ใต้ข้อความ
-2. กดปุ่ม Windows + R พิมพ์ `cmd` แล้วกด Enter
-3. คลิกขวาในหน้าต่างสีดำเพื่อวางคำสั่ง แล้วกด Enter
-4. รีสตาร์ทเครื่อง แล้วเปิด AR Launcher อีกครั้ง
-
-คำสั่งนี้เปิด UAC ให้เครื่องนี้และบัญชีนี้ ถ้าคัดลอกไม่ได้ ให้คัดลอกจากด้านล่าง
-
-```txt
-cmd /c "reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f && reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v FilterAdministratorToken /t REG_DWORD /d 1 /f"
-```
-
-ถ้าทำแล้วยังไม่หาย ให้เข้าใช้งาน Windows ด้วยบัญชีผู้ดูแลระบบปกติ ไม่ใช่บัญชี Administrator ที่มากับ Windows
-ถ้าตอนติดตั้ง AR Launcher [เลือกให้ใช้ได้เฉพาะบัญชีเดิม](/th/ar-launcher/install#install-for-whom) ต้องติดตั้ง AR Launcher ใหม่ในบัญชีนั้นด้วย
-
-### เปิดบริการ Application Information ก่อน [#startup-appinfo-off]
-
-เครื่องนี้ปิด User Account Control (UAC) ไว้ ซึ่งน่าจะเป็นเหตุที่ Windows ไม่อนุญาตให้จับภาพหน้าจอ แต่บริการ Application Information ของ Windows ถูกปิดอยู่ด้วย
-เมื่อเปิด UAC แล้ว Windows ใช้บริการนี้ขอสิทธิ์ผู้ดูแลระบบทุกครั้ง ถ้าเปิด UAC ก่อน เครื่องจะขอสิทธิ์ผู้ดูแลระบบไม่ได้ จึงต้องเปิดบริการนี้ก่อน ต้องใช้บัญชีผู้ดูแลระบบ (Administrator) ของเครื่องนี้ในการแก้
-
-1. กด **คัดลอกคำสั่ง** ใต้ข้อความ
-2. กดปุ่ม Windows + R พิมพ์ `cmd` แล้วกด Enter
-3. คลิกขวาในหน้าต่างสีดำเพื่อวางคำสั่ง แล้วกด Enter ถ้าขึ้นว่า `[SC] ChangeServiceConfig SUCCESS` แปลว่าสำเร็จ
-4. กด **ลองอีกครั้ง** ไม่ต้องรีสตาร์ทเครื่อง แล้วทำตามข้อความถัดไปเรื่อง UAC
-
-คำสั่งนี้ตั้งบริการ Application Information กลับเป็น Manual ซึ่งเป็นค่าเริ่มต้นของ Windows ถ้าคัดลอกไม่ได้ ให้คัดลอกจากด้านล่าง
-
-```txt
-sc.exe config Appinfo start= demand
-```
-
-ถ้าขึ้นว่า `Access is denied` ให้ทำจากบัญชีผู้ดูแลระบบของเครื่องนี้
-
-### Windows บนเครื่องนี้ขอสิทธิ์ผู้ดูแลระบบไม่ได้ [#startup-elevation-missing]
-
-เครื่องนี้ปิด User Account Control (UAC) ไว้ ซึ่งน่าจะเป็นเหตุที่ Windows ไม่อนุญาตให้จับภาพหน้าจอ
-แต่ Windows บนเครื่องนี้ไม่มีส่วนที่ใช้ขอสิทธิ์ผู้ดูแลระบบ คือบริการ Application Information หรือไฟล์ `consent.exe` มักพบใน Windows ที่มีคนดัดแปลงหรือตัดฟีเจอร์ออก
-
-<Callout type="error">
-  **อย่าเปิด UAC บนเครื่องนี้** ถ้าเปิด เครื่องจะขอสิทธิ์ผู้ดูแลระบบไม่ได้อีก รวมถึงการปิด UAC กลับ และอาจต้องเข้า Safe Mode เพื่อแก้
-</Callout>
-
-ทางแก้คือใช้ Windows 10 หรือ 11 ฉบับปกติที่ติดตั้งจากไฟล์ของ Microsoft ถ้าไม่แน่ใจ ให้[ส่งไฟล์ log ให้ทีมงาน](/th/ar-launcher/send-log)
+ถ้ายังเห็นข้อความเหล่านี้ ให้[ดาวน์โหลด AR Launcher รุ่นล่าสุด](/th/ar-launcher/install#download)แล้วติดตั้ง
+ไม่ต้องเปิด UAC หรือรันคำสั่งที่เคยอยู่ในหัวข้อนี้
 
 ### FiveM หรือ RedM เปิดอยู่ตอนเปิด AR Launcher [#startup-fivem-running]
 

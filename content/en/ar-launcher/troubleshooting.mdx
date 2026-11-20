@@ -58,98 +58,18 @@ Open your antivirus protection history, allow the most recently blocked item, th
 If you use Windows Security, go to **Virus & threat protection** → **Protection history**.
 If nothing there was blocked, [send your log file to the team](/en/ar-launcher/send-log).
 
-### Windows cannot capture the screen [#startup-capture-unsupported]
+<a id="startup-capture-service" />
+<a id="startup-uac-off" />
+<a id="startup-builtin-admin" />
+<a id="startup-appinfo-off" />
+<a id="startup-elevation-missing" />
 
-Update Windows through **Windows Update** in **Settings**, and update your graphics driver from its
-maker's website (NVIDIA, AMD or Intel), then press **Try again**.
-If the message says Windows refused screen capture, it is not caused by your antivirus. It usually
-happens on modified or stripped-down Windows, and you need a standard, up-to-date Windows 10 or 11.
+### Windows cannot capture the screen, or a message about UAC [#startup-capture-unsupported]
 
-### The Windows screen-capture service is turned off [#startup-capture-service]
+These messages come from AR Launcher versions before 0.26.4: the ones about Windows screen capture, User Account Control (UAC), the Application Information service and the built-in Administrator account.
 
-This is usually done by a Windows tweaking tool.
-
-1. Restart your PC.
-2. Open AR Launcher.
-3. Choose **Yes** when Windows asks for permission. AR Launcher turns the service back on.
-
-### User Account Control (UAC) is turned off [#startup-uac-off]
-
-<Callout type="warning">
-  **If Windows on this PC was not installed from Microsoft's own files**, for example a modified or
-  stripped-down build, **or a tweaking tool has turned off Windows services**, turning UAC back on may leave the PC unable to grant administrator rights, and
-  fixing that may need Safe Mode. If you are not sure, contact the AR team first.
-</Callout>
-
-UAC is turned off on this PC, which is the likely reason Windows refused screen capture. Fixing it
-requires an administrator account on this PC.
-
-1. Press **Open UAC settings** under the message. If the window does not open, press Windows + R, type
-   `UserAccountControlSettings` and press Enter.
-2. Move the slider to the second level from the top, which is the Windows default, and press **OK**.
-3. Restart your PC, then open AR Launcher again.
-
-### The built-in Administrator account [#startup-builtin-admin]
-
-<Callout type="warning">
-  **If Windows on this PC was not installed from Microsoft's own files**, for example a modified or
-  stripped-down build, **or a tweaking tool has turned off Windows services**, turning UAC back on may leave the PC unable to grant administrator rights, and
-  fixing that may need Safe Mode. If you are not sure, contact the AR team first.
-</Callout>
-
-This PC signs in with the Administrator account that comes with Windows, with UAC turned off, which is
-the likely reason Windows refused screen capture.
-
-1. Press **Copy command** under the message.
-2. Press Windows + R, type `cmd` and press Enter.
-3. Right-click in the black window to paste the command, then press Enter.
-4. Restart your PC, then open AR Launcher again.
-
-The command turns UAC on for this PC and this account. If it could not be copied, copy it from here.
-
-```txt
-cmd /c "reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f && reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v FilterAdministratorToken /t REG_DWORD /d 1 /f"
-```
-
-If it still does not work, sign in to Windows with an ordinary administrator account rather than the
-built-in Administrator. If you installed AR Launcher
-[for yourself only](/en/ar-launcher/install#install-for-whom), install it again in that account too.
-
-### Turn on the Application Information service first [#startup-appinfo-off]
-
-UAC is turned off on this PC, which is the likely reason Windows refused screen capture. The Windows
-Application Information service is turned off too. With UAC on, Windows uses that service every time it
-grants administrator rights, so turning UAC on first would leave this PC unable to grant them. Turn the
-service on first. Fixing it requires an administrator account on this PC.
-
-1. Press **Copy command** under the message.
-2. Press Windows + R, type `cmd` and press Enter.
-3. Right-click in the black window to paste the command, then press Enter. `[SC] ChangeServiceConfig SUCCESS`
-   means it worked.
-4. Press **Try again**. No restart is needed. Then follow the next message, about UAC.
-
-The command sets the Application Information service back to Manual, which is the Windows default. If it
-could not be copied, copy it from here.
-
-```txt
-sc.exe config Appinfo start= demand
-```
-
-If it says `Access is denied`, run it from an administrator account on this PC.
-
-### Windows on this PC cannot grant administrator rights [#startup-elevation-missing]
-
-UAC is turned off on this PC, which is the likely reason Windows refused screen capture. But Windows on
-this PC is missing the parts it uses to grant administrator rights: the Application Information service or
-the file `consent.exe`. This usually happens on modified or stripped-down Windows.
-
-<Callout type="error">
-  **Do not turn UAC on here.** This PC could then no longer grant administrator rights at all, not even to
-  turn UAC off again, and fixing that may need Safe Mode.
-</Callout>
-
-The fix is a standard Windows 10 or 11 installed from Microsoft's own files. If you are not sure,
-[send your log file to the team](/en/ar-launcher/send-log).
+If you still see one of them, [download the latest AR Launcher](/en/ar-launcher/install#download) and install it.
+You do not need to turn UAC on or run the commands this section used to give.
 
 ### FiveM or RedM is running when AR Launcher opens [#startup-fivem-running]
 
