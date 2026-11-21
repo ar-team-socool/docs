@@ -20,7 +20,17 @@ information could not be loaded, press **Try again**. If it keeps happening,
 
 ### No internet connection was found [#startup-internet]
 
-Check that your PC is connected to the internet, then press **Try again**.
+AR Launcher could not find an internet connection on this PC. Try one step at a time, and press
+**Try again** after each one.
+
+1. Look at the network icon at the bottom right of the taskbar. If it shows you are not connected, click
+   it, turn off **Airplane mode** if it is on, and choose your Wi‑Fi. If you use a cable, check that it is
+   plugged in firmly at both your PC and your router.
+2. Press **Windows + R**, type `ncpa.cpl` and press Enter. If the connection you use shows **Disabled**,
+   right-click it and choose **Enable**.
+3. Open any website in your browser. If that does not load either, restart your PC and your router.
+
+If websites load but AR Launcher still shows this message, [send your log file to the team](/en/ar-launcher/send-log).
 
 ### Could not connect to AR Launcher [#startup-connection]
 
@@ -66,9 +76,21 @@ file from the official channels only.
 
 ### Antivirus software is blocking screen capture [#startup-capture-blocked]
 
-Open your antivirus protection history, allow the most recently blocked item, then press **Try again**.
-If you use Windows Security, go to **Virus & threat protection** → **Protection history**.
-If nothing there was blocked, [send your log file to the team](/en/ar-launcher/send-log).
+Open your antivirus protection history and allow the most recently blocked item.
+If you use Windows Security, the antivirus that comes with Windows:
+
+1. Press **Windows + R**, type `windowsdefender:` and press Enter.
+2. Go to **Virus & threat protection** → **Protection history**.
+3. Click the most recent item to see its details. If Windows asks for permission, choose **Yes**.
+   Allow only an item whose file is in the folder where AR Launcher is installed. Its path usually
+   contains `AR Launcher`.
+4. Press **Actions** and choose **Allow on device**. If the only choice is **Restore**, choose **Restore**
+   first, and if a new item for the same file appears, choose **Allow on device** on that one.
+5. Go back to AR Launcher and press **Try again**.
+
+If you use other antivirus software, open its history or quarantine page, then restore and allow the same
+item. The menu names differ from program to program.
+Do not turn your antivirus off. If nothing there was blocked, [send your log file to the team](/en/ar-launcher/send-log).
 
 <a id="startup-capture-service" />
 <a id="startup-uac-off" />
@@ -87,7 +109,13 @@ You do not need to turn UAC on or run the commands this section used to give.
 
 The game has to be closed before AR Launcher can start. Press **Close the game**, and AR Launcher closes
 it and checks again by itself.
-If it could not close the game, end it in Task Manager, then press **Try again**.
+If the message says it could not close the game, end it in Task Manager:
+
+1. Press **Ctrl + Shift + Esc** to open **Task Manager**. If it shows only a short list of apps, press
+   **More details**.
+2. In **Processes**, right-click each item with FiveM or RedM in its name and choose **End task**, until
+   none are left.
+3. Go back to AR Launcher and press **Try again**.
 
 ## The anti-cheat is not running [#anticheat-not-running]
 
@@ -96,13 +124,27 @@ The message in the window says why. Find the section below that matches it.
 
 ### Antivirus software is blocking it [#anticheat-blocked-by-antivirus]
 
-Open your antivirus protection history, allow the most recently blocked item, then press **Try again**.
-In Windows Security, go to **Virus & threat protection** → **Protection history**.
+Open your antivirus protection history and allow the most recently blocked item.
+If you use Windows Security, the antivirus that comes with Windows:
+
+1. Press **Windows + R**, type `windowsdefender:` and press Enter.
+2. Go to **Virus & threat protection** → **Protection history**.
+3. Click the most recent item to see its details. If Windows asks for permission, choose **Yes**.
+   Allow only an item whose file is in the folder where AR Launcher is installed. Its path usually
+   contains `AR Launcher`.
+4. Press **Actions** and choose **Allow on device**. If the only choice is **Restore**, choose **Restore**
+   first, and if a new item for the same file appears, choose **Allow on device** on that one.
+5. Go back to AR Launcher and press **Try again**.
+
+If you use other antivirus software, open its history or quarantine page, then restore and allow the same
+item. The menu names differ from program to program.
 Do not turn your antivirus off. If it still fails, send the team a screenshot of the window.
 
 ### A file the anti-cheat needs is missing [#anticheat-files-missing]
 
-It may have been removed after installation. Reinstall AR Launcher.
+It may have been removed after installation. Download the installer from the
+[install page](/en/ar-launcher/install#download) and install AR Launcher again. Use a file from the
+official channels only.
 
 ### AR Launcher is asking Windows for permission [#anticheat-waiting-for-windows]
 
@@ -114,14 +156,34 @@ If you cannot see the Windows prompt, look for the flashing icon on the taskbar.
 Enter the password of an administrator account on this PC when Windows asks, then press **Try again**.
 If you do not know the password, sign in to Windows with an administrator account, or ask the owner of this PC.
 
+1. Press **Ctrl + Alt + Delete** and choose **Switch user**.
+2. Sign in with an administrator account on this PC. If you are not sure, press **Windows + R**, type
+   `ms-settings:yourinfo` and press Enter. The word **Administrator** must appear under the account name.
+3. If AR Launcher is not on that account yet, [install it](/en/ar-launcher/install#download) first. Then
+   open AR Launcher and press **Connect** again.
+
 ### This PC does not let your account ask for permission [#anticheat-elevation-denied]
 
 Sign in to Windows with an administrator account on this PC, or ask the owner of this PC.
 
+1. Press **Ctrl + Alt + Delete** and choose **Switch user**.
+2. Sign in with an administrator account on this PC. If you are not sure, press **Windows + R**, type
+   `ms-settings:yourinfo` and press Enter. The word **Administrator** must appear under the account name.
+3. If AR Launcher is not on that account yet, [install it](/en/ar-launcher/install#download) first. Then
+   open AR Launcher and press **Connect** again.
+
 ## The connection to the server is blocked [#connection-blocked]
 
-A program on your PC or network is blocking AR Launcher's connection.
-If you use a VPN or an internet booster, turn it off or set it to exclude AR Launcher, then press **Try again**.
+A program on your PC or network is blocking AR Launcher's connection. Try one step at a time, and press
+**Try again** after each one.
+
+1. Turn off your VPN and any internet booster, such as a ping reducer for games. Quit it from its icon at
+   the bottom right of the taskbar, not just its window. To keep using it, add AR Launcher to its list of
+   exclusions.
+2. If you are on a network at work, in a dorm or in a shop, try your phone's hotspot. If you can join the
+   server that way, the other network is blocking the connection. Tell whoever runs that network.
+
+If none of this helps, [send your log file to the team](/en/ar-launcher/send-log).
 
 ## FiveM or RedM is using a different Steam account [#steam-mismatch]
 
@@ -144,21 +206,38 @@ The message in the window says why. Find the section below that matches it.
 
 ### AR Launcher could not find FiveM or RedM [#fivem-not-found]
 
-Open that game yourself once, wait for its main screen, close it, then press **Try again**.
+Open that game yourself once, wait for its main screen, then close it.
+
+1. Press the **Windows** key, type `FiveM` or `RedM`, whichever game the server uses, and open it.
+2. Wait for the game's main screen. The first time, or when there is an update, the game downloads files
+   first. Let it finish.
+3. Close the game. If it does not close, end it in Task Manager with [these steps](#startup-fivem-running).
+4. Go back to AR Launcher and press **Try again**.
 
 ### GTA V's settings file was not found [#startup-gta-settings]
 
 The settings file was not found, or could not be read: start the game through FiveM once so it writes its
-settings file again, then press **Try again**.
+settings file again.
+
+1. Press the **Windows** key, type `FiveM` and open FiveM.
+2. Wait for FiveM's main screen. When there is an update, FiveM downloads files first. Let it finish.
+3. Close FiveM. If it does not close, end it in Task Manager with [these steps](#startup-fivem-running).
+4. Go back to AR Launcher and press **Try again**.
 
 ### Your graphics settings could not be checked [#settings-unchecked]
 
-Press **Try again**. If it still fails, check your internet connection, then contact the AR team.
+Press **Try again**. If it still fails, check your internet connection with [these steps](#startup-internet),
+then [send your log file to the team](/en/ar-launcher/send-log).
 
 ### RedM's settings file was not found [#redm-settings]
 
 The settings file was not found, or could not be read: start RedM yourself once so it writes its settings
-file again. Close it, then press **Try again**.
+file again.
+
+1. Press the **Windows** key, type `RedM` and open RedM.
+2. Wait for RedM's main screen. When there is an update, RedM downloads files first. Let it finish.
+3. Close RedM. If it does not close, end it in Task Manager with [these steps](#startup-fivem-running).
+4. Go back to AR Launcher and press **Try again**.
 
 ### The game was not started in pure mode [#pure-mode]
 
