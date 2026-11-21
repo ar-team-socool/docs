@@ -24,9 +24,21 @@ Check that your PC is connected to the internet, then press **Try again**.
 
 ### Could not connect to AR Launcher [#startup-connection]
 
-If you use a VPN, an internet booster or a custom DNS, turn it off, then press **Try again**.
+AR Launcher could not reach our system. This is usually caused by a program that changes how this PC
+connects to the internet. Try one step at a time, and press **Try again** after each one.
+
+1. Turn off your VPN and any internet booster, such as a ping reducer for games. Quit it from its icon at
+   the bottom right of the taskbar, not just its window. To keep using it, add AR Launcher to its list of
+   exclusions.
+2. Set DNS back to automatic. Press **Windows + R**, type `ncpa.cpl` and press Enter. Right-click the
+   connection you use, then choose **Properties** → **Internet Protocol Version 4 (TCP/IPv4)** →
+   **Properties**. Select **Obtain DNS server address automatically** and press **OK**.
+   If you use a program that changes your DNS, turn it off too.
+3. Clear the DNS cache. Open **Command Prompt**, type `ipconfig /flushdns` and press Enter.
+4. Restart your PC and your router.
+
 If the message says your connection could not be confirmed, check your internet connection first, then
-press **Try again**.
+press **Try again**. If none of this helps, [send your log file to the team](/en/ar-launcher/send-log).
 
 ### This PC's date or time is wrong [#startup-clock]
 
