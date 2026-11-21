@@ -88,6 +88,9 @@ If you use Windows Security, the antivirus that comes with Windows:
    first, and if a new item for the same file appears, choose **Allow on device** on that one.
 5. Go back to AR Launcher and press **Try again**.
 
+If the item mentions **Smart App Control**, the steps above do not work for it. See
+[Smart App Control is blocking AR Launcher](#smart-app-control).
+
 If you use other antivirus software, open its history or quarantine page, then restore and allow the same
 item. The menu names differ from program to program.
 Do not turn your antivirus off. If nothing there was blocked, [send your log file to the team](/en/ar-launcher/send-log).
@@ -136,6 +139,9 @@ If you use Windows Security, the antivirus that comes with Windows:
    first, and if a new item for the same file appears, choose **Allow on device** on that one.
 5. Go back to AR Launcher and press **Try again**.
 
+If the item mentions **Smart App Control**, the steps above do not work for it. See
+[Smart App Control is blocking AR Launcher](#smart-app-control).
+
 If you use other antivirus software, open its history or quarantine page, then restore and allow the same
 item. The menu names differ from program to program.
 Do not turn your antivirus off. If it still fails, send the team a screenshot of the window.
@@ -171,6 +177,40 @@ Sign in to Windows with an administrator account on this PC, or ask the owner of
    `ms-settings:yourinfo` and press Enter. The word **Administrator** must appear under the account name.
 3. If AR Launcher is not on that account yet, [install it](/en/ar-launcher/install#download) first. Then
    open AR Launcher and press **Connect** again.
+
+## Smart App Control is blocking AR Launcher [#smart-app-control]
+
+Smart App Control is a Windows 11 protection that blocks apps whose developer Windows does not know, which
+can include AR Launcher (the app that shows **Publisher: Unknown** when it opens). If Smart App Control
+blocks AR Launcher, there is no way to allow only AR Launcher: Smart App Control is either on or off.
+
+You may see:
+
+- A Windows message that Smart App Control blocked the installer, AR Launcher, or part of an app.
+- AR Launcher saying antivirus software is blocking screen capture or the anti-cheat, with an item that
+  mentions **Smart App Control** in **Protection history**.
+
+Check whether it is on:
+
+1. Press **Windows + R**, type `windowsdefender:` and press Enter.
+2. Go to **App & browser control** → **Smart App Control settings**.
+3. If it is set to **On**, it can block AR Launcher.
+   If it is set to **Evaluation mode** or **Off**, it is not the cause. Leave it as it is and go back to
+   the section for the message you saw.
+
+<Callout type="warning">
+  Turning Smart App Control off turns this Windows protection off for every app on this PC, not just
+  AR Launcher. Up-to-date Windows can turn it back on from the same page, but some PCs cannot turn it on
+  again without resetting or reinstalling Windows. Once changed, it cannot go back to **Evaluation mode**
+  without resetting or reinstalling Windows. Only turn it off if you accept this.
+</Callout>
+
+To turn it off:
+
+1. On the same **Smart App Control settings** page, choose **Off**. If Windows asks, choose **Yes**.
+2. Open the installer or AR Launcher again. If AR Launcher is already open, press **Try again**.
+
+Turning Smart App Control off does not turn off your antivirus. Do not turn your antivirus off.
 
 ## The connection to the server is blocked [#connection-blocked]
 
